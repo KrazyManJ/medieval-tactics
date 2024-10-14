@@ -17,6 +17,7 @@ struct Conversation {
     std::string response;
 
     bool matches(std::string userSentence);
+    std::string toLowerCase(const std::string input);
 };
 
 #endif /* Conversation_h */

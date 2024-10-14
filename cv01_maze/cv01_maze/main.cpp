@@ -7,14 +7,9 @@
 
 #include <iostream>
 
-using namespace std;
-
 int main(int argc, const char * argv[]) {
     
     bool run = true;
     
-    while (
-    
-    std::cout << "Čau Šmaku" << std::endl;
     return 0;
 }

@@ -27,7 +27,7 @@ std::vector<Conversation> Loader::getConversations(const std::string filename) c
 
 Conversation Loader::splitLine(const std::string line) const{
     return {
-        std::regex(".*"+line.substr(0,line.find(" "))+".+"),
+        std::regex(".*"+line.substr(0,line.find(" "))+".*"),
         line.substr(line.find(" ")+1,line.size()-1)
     };
 }
