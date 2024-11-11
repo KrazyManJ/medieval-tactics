@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44A198622CDCE3D9001DD852 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A198612CDCE3D9001DD852 /* main.cpp */; };
+		44A198752CDCE46C001DD852 /* Suite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A198682CDCE46C001DD852 /* Suite.cpp */; };
+		44A198762CDCE46C001DD852 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A1986A2CDCE46C001DD852 /* Test.cpp */; };
+		44A198772CDCE46C001DD852 /* RoverTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44A1986D2CDCE46C001DD852 /* RoverTest.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		44A1985C2CDCE3D8001DD852 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		44A1985E2CDCE3D8001DD852 /* cv07_mars_rover */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cv07_mars_rover; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A198612CDCE3D9001DD852 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		44A198682CDCE46C001DD852 /* Suite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Suite.cpp; sourceTree = "<group>"; };
+		44A198692CDCE46C001DD852 /* Suite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suite.h; sourceTree = "<group>"; };
+		44A1986A2CDCE46C001DD852 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+		44A1986B2CDCE46C001DD852 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		44A1986D2CDCE46C001DD852 /* RoverTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoverTest.cpp; sourceTree = "<group>"; };
+		44A1986E2CDCE46C001DD852 /* RoverTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RoverTest.hpp; sourceTree = "<group>"; };
+		44A198702CDCE46C001DD852 /* Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concrete.h; sourceTree = "<group>"; };
+		44A198712CDCE46C001DD852 /* Ice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ice.h; sourceTree = "<group>"; };
+		44A198722CDCE46C001DD852 /* Soil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soil.h; sourceTree = "<group>"; };
+		44A198732CDCE46C001DD852 /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		44A198792CDCE577001DD852 /* Rover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rover.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44A1985B2CDCE3D8001DD852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44A198552CDCE3D8001DD852 = {
+			isa = PBXGroup;
+			children = (
+				44A198602CDCE3D8001DD852 /* cv07_mars_rover */,
+				44A1985F2CDCE3D8001DD852 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44A1985F2CDCE3D8001DD852 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44A1985E2CDCE3D8001DD852 /* cv07_mars_rover */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44A198602CDCE3D8001DD852 /* cv07_mars_rover */ = {
+			isa = PBXGroup;
+			children = (
+				44A198792CDCE577001DD852 /* Rover.h */,
+				44A198742CDCE46C001DD852 /* materials */,
+				44A1986F2CDCE46C001DD852 /* tests */,
+				44A198612CDCE3D9001DD852 /* main.cpp */,
+			);
+			path = cv07_mars_rover;
+			sourceTree = "<group>";
+		};
+		44A1986C2CDCE46C001DD852 /* TestSuite */ = {
+			isa = PBXGroup;
+			children = (
+				44A198682CDCE46C001DD852 /* Suite.cpp */,
+				44A198692CDCE46C001DD852 /* Suite.h */,
+				44A1986A2CDCE46C001DD852 /* Test.cpp */,
+				44A1986B2CDCE46C001DD852 /* Test.h */,
+			);
+			path = TestSuite;
+			sourceTree = "<group>";
+		};
+		44A1986F2CDCE46C001DD852 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				44A1986C2CDCE46C001DD852 /* TestSuite */,
+				44A1986D2CDCE46C001DD852 /* RoverTest.cpp */,
+				44A1986E2CDCE46C001DD852 /* RoverTest.hpp */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		44A198742CDCE46C001DD852 /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				44A198702CDCE46C001DD852 /* Concrete.h */,
+				44A198712CDCE46C001DD852 /* Ice.h */,
+				44A198722CDCE46C001DD852 /* Soil.h */,
+				44A198732CDCE46C001DD852 /* Water.h */,
+			);
+			path = materials;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44A1985D2CDCE3D8001DD852 /* cv07_mars_rover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A198652CDCE3D9001DD852 /* Build configuration list for PBXNativeTarget "cv07_mars_rover" */;
+			buildPhases = (
+				44A1985A2CDCE3D8001DD852 /* Sources */,
+				44A1985B2CDCE3D8001DD852 /* Frameworks */,
+				44A1985C2CDCE3D8001DD852 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cv07_mars_rover;
+			productName = cv07_mars_rover;
+			productReference = 44A1985E2CDCE3D8001DD852 /* cv07_mars_rover */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44A198562CDCE3D8001DD852 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					44A1985D2CDCE3D8001DD852 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 44A198592CDCE3D8001DD852 /* Build configuration list for PBXProject "cv07_mars_rover" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44A198552CDCE3D8001DD852;
+			productRefGroup = 44A1985F2CDCE3D8001DD852 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44A1985D2CDCE3D8001DD852 /* cv07_mars_rover */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44A1985A2CDCE3D8001DD852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A198772CDCE46C001DD852 /* RoverTest.cpp in Sources */,
+				44A198762CDCE46C001DD852 /* Test.cpp in Sources */,
+				44A198752CDCE46C001DD852 /* Suite.cpp in Sources */,
+				44A198622CDCE3D9001DD852 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		44A198632CDCE3D9001DD852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		44A198642CDCE3D9001DD852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		44A198662CDCE3D9001DD852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		44A198672CDCE3D9001DD852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44A198592CDCE3D8001DD852 /* Build configuration list for PBXProject "cv07_mars_rover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A198632CDCE3D9001DD852 /* Debug */,
+				44A198642CDCE3D9001DD852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A198652CDCE3D9001DD852 /* Build configuration list for PBXNativeTarget "cv07_mars_rover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A198662CDCE3D9001DD852 /* Debug */,
+				44A198672CDCE3D9001DD852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44A198562CDCE3D8001DD852 /* Project object */;
+}
