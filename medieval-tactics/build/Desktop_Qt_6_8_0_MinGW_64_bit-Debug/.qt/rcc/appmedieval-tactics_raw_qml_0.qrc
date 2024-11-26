@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/medieval-tactics/">
+    <file alias="Main.qml">D:/development/school-related/pcp/cpp_zs2024_xkorcak/medieval-tactics/Main.qml</file>
+  </qresource>
+</RCC>
+
