@@ -1,5 +1,0 @@
-module medieval-tactics
-typeinfo appmedieval-tactics.qmltypes
-prefer :/qt/qml/medieval-tactics/
-Main 1.0 Main.qml
-

@@ -1,3 +1,0 @@
-set(__QT_DEPLOY_TARGET_appmedieval-tactics_FILE D:/development/school-related/pcp/cpp_zs2024_xkorcak/medieval-tactics/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/appmedieval-tactics.exe)
-set(__QT_DEPLOY_TARGET_appmedieval-tactics_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_appmedieval-tactics_RUNTIME_DLLS D:/software/Qt/6.8.0/mingw_64/bin/Qt6Quick.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6QmlMeta.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6QmlWorkerScript.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6QmlModels.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6Qml.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6Network.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6OpenGL.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6Gui.dll;D:/software/Qt/6.8.0/mingw_64/bin/Qt6Core.dll)
