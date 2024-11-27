@@ -19,7 +19,17 @@ public:
     Unit(float hp, int defense, int walkingRange,
          int abilityRange, int cost,
          std::vector<GroundType> enterableGroundType, Position positon);
+    float getHp();
+    void setHp();
+    int getDefense();
+    void move(int row, int column);
+    void useAbility();
+    bool isInWalkingRange(int row, int column);
+    bool isInAbilityRange(int row, int column);
+    std::vector<GroundType> getEnterableGroundType();
+    ~Unit();
 
 };
+
 
 #endif // UNIT_H
