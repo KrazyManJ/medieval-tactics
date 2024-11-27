@@ -1,7 +1,7 @@
 #ifndef HEALUNIT_H
 #define HEALUNIT_H
 
-#include "unit.h"
+#include "Unit.h"
 
 class HealUnit : public Unit
 {

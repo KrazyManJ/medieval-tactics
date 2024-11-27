@@ -1,7 +1,7 @@
 #ifndef BUILDUNIT_H
 #define BUILDUNIT_H
 
-#include "unit.h"
+#include "Unit.h"
 
 class BuildUnit : public Unit
 {

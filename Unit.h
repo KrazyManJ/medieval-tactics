@@ -20,7 +20,7 @@ public:
          int abilityRange, int cost,
          std::vector<GroundType> enterableGroundType, Position positon);
     float getHp();
-    void setHp();
+    void setHp(float hp);
     int getDefense();
     void move(int row, int column);
     void useAbility();

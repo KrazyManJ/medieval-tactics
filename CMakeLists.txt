@@ -18,7 +18,7 @@ qt_add_qml_module(appcpp_zs2024_xkorcak
     QML_FILES
         Main.qml
         SOURCES Position.h
-        SOURCES unit.h unit.cpp
+        SOURCES Unit.h Unit.cpp
         SOURCES GroundType.h
         SOURCES
         SOURCES AttackUnit.h AttackUnit.cpp

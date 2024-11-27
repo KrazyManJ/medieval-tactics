@@ -4,6 +4,6 @@
 #endif // POSITION_H
 
 struct Position {
-    int x;
-    int y;
+    int row;
+    int column;
 };
