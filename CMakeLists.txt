@@ -17,6 +17,7 @@ qt_add_qml_module(appcpp_zs2024_xkorcak
     VERSION 1.0
     QML_FILES
         Main.qml
+        SOURCES Position.h
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
