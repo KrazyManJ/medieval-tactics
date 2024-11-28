@@ -40,8 +40,8 @@ void Unit::useAbility()
 bool Unit::isInWalkingRange(int row, int column)
 {
     bool feedback = false;
-    if(row <= m_position.row + m_walkingRange and
-        column <= m_position.column + m_walkingRange ){
+    if(abs(row - m_position.row) <= m_walkingRange and
+        abs(column - m_position.column) <= m_walkingRange){
         feedback = true;
     }
     return feedback;
@@ -50,8 +50,8 @@ bool Unit::isInWalkingRange(int row, int column)
 bool Unit::isInAbilityRange(int row, int column)
 {
     bool feedback = false;
-    if(row <= m_position.row + m_abilityRange and
-        column <= m_position.column + m_abilityRange ){
+    if(abs(row - m_position.row) <= m_abilityRange and
+        abs(column - m_position.column) <= m_abilityRange){
         feedback = true;
     }
     return feedback;
