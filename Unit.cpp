@@ -34,7 +34,7 @@ void Unit::move(int row, int column)
 
 void Unit::useAbility()
 {
-    //todo not sure if dont need to add the thing we learn you know that thing
+    //todo not sure if dont need to add the thing we learn you know that thing template
 }
 
 bool Unit::isInWalkingRange(int row, int column)
