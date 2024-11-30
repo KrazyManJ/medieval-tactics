@@ -7,7 +7,7 @@
 Map::Map(){
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
-            mapMatrix[i][j] = new MapObject(true, Grass);
+            mapMatrix[i][j] = new MapObject(true, GroundType::Grass);
         }
     }
 }
