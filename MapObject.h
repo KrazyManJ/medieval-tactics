@@ -9,7 +9,7 @@
 
 class MapObject {
      bool m_solid;
-     GroundType m_GroundType;
+     GroundType m_groundType;
 
 public:
      MapObject(bool solid, GroundType groundtype);
