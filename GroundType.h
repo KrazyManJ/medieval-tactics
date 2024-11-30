@@ -3,6 +3,10 @@
 
 #endif // GROUNDTYPE_H
 
-struct GroundType{
-
+enum GroundType{
+    Grass,
+    Water,
+    Mud,
+    tree,
+    hill
 };
