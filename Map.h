@@ -4,17 +4,19 @@
 
 #ifndef MAP_H
 #define MAP_H
-
+#include "MapObject.h"
 
 
 class Map {
-    std::vector<std::vector<MapObject*>> m_MapMatrix; //probrat na meetingu
+    conts int rows = 5;
+    conts int columns = 5;
+    MapObject mapMatrix[rows][columns];
 
 public:
        Map();
        int getWidth();
        int getHeight();
-       MapObject getObjectAt(int row, int column);
+       MapObject* getObjectAt(int row, int column);
        ~Map();
 };
 
