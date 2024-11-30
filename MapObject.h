@@ -8,14 +8,14 @@
 
 
 class MapObject {
-     bool m_solid;
-     GroundType m_groundType;
+    bool m_solid;
+    GroundType m_groundType;
 
 public:
-     MapObject(bool solid, GroundType groundtype);
-     GroundType getType();
-     bool isSolid();
-     ~MapObject();
+    MapObject(bool solid, GroundType groundtype);
+    GroundType getType();
+    bool isSolid();
+    ~MapObject();
 };
 
 

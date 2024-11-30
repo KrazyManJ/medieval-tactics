@@ -5,12 +5,13 @@
 #ifndef MAP_H
 #define MAP_H
 #include "MapObject.h"
+#include <array>
 
 
 class Map {
-    const int rows = 5;
-    const int columns = 5;
-    MapObject mapMatrix[rows][columns];
+    static constexpr int rows = 5;
+    static constexpr int columns = 5;
+    std::array<std::array<MapObject*, columns>, rows> mapMatrix;
 
 public:
        Map();

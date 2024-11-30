@@ -17,3 +17,6 @@ bool MapObject::isSolid() {
 	return m_solid;
 }
 
+MapObject::~MapObject(){
+
+}
