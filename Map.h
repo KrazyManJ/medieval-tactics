@@ -8,8 +8,8 @@
 
 
 class Map {
-    conts int rows = 5;
-    conts int columns = 5;
+    const int rows = 5;
+    const int columns = 5;
     MapObject mapMatrix[rows][columns];
 
 public:

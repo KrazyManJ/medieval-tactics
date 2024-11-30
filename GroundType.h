@@ -1,12 +1,14 @@
 #ifndef GROUNDTYPE_H
 #define GROUNDTYPE_H
 
-#endif // GROUNDTYPE_H
-
-enum GroundType{
+enum class GroundType {
     Grass,
     Water,
     Mud,
-    tree,
-    hill
+    Tree,
+    Hill
 };
+
+
+
+#endif // GROUNDTYPE_H
