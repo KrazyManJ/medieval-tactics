@@ -24,11 +24,10 @@ public:
     void setHp(float hp);
     int getDefense();
     void move(int row, int column);
-    virtual void useAbility()= 0;
-    virtual std::string getAbilityName()=0;
     bool isInWalkingRange(int row, int column);
     bool isInAbilityRange(int row, int column);
     std::vector<GroundType> getEnterableGroundType();
+    virtual void useAbility(int row, int column)= 0;
     ~Unit();
 
 };

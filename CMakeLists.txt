@@ -28,7 +28,7 @@ qt_add_qml_module(appcpp_zs2024_xkorcak
         SOURCES Player.h Player.cpp
         SOURCES Game.h Game.cpp
         SOURCES GameContext.h GameContext.cpp
-        SOURCES Warrior.h Warrior.cpp
+        SOURCES
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
