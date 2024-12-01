@@ -20,12 +20,12 @@ qt_add_qml_module(appcpp_zs2024_xkorcak
         SOURCES Position.h
         SOURCES Unit.h Unit.cpp
         SOURCES GroundType.h
-        SOURCES
         SOURCES AttackUnit.h AttackUnit.cpp
         SOURCES BuildUnit.h BuildUnit.cpp
         SOURCES HealUnit.h HealUnit.cpp
         SOURCES MapObject.h MapObject.cpp
         SOURCES Map.h Map.cpp
+        SOURCES Player.h Player.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
