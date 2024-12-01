@@ -1,4 +1,5 @@
 #include "Unit.h"
+#include <cstdlib>
 
 Unit::Unit(float hp, int defense, int walkingRange, int abilityRange, int cost, std::vector<GroundType> enterableGroundType, Position positon)
 {
@@ -30,11 +31,6 @@ void Unit::move(int row, int column)
 {
     m_position.row = row;
     m_position.column = column;
-}
-
-void Unit::useAbility()
-{
-    //todo not sure if dont need to add the thing we learn you know that thing template
 }
 
 bool Unit::isInWalkingRange(int row, int column)
