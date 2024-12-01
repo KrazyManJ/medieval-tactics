@@ -15,14 +15,12 @@ private:
 public:
     Game();
 
-    void switchActivePlayer();
-
     Map* getMap();
 
-    Player* getPlayer1();
-    Player* getPlayer2();
     Player* getPlayerOnTurn();
     Player* getOponentPlayerOfPlayerOnTurn();
+
+    void switchActivePlayer();
 
     ~Game();
 };
