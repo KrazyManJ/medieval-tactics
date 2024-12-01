@@ -5,9 +5,9 @@
 
 class AttackUnit : public Unit
 {
-    float m_attackPower;
 public:
     float getAttackPower();
+    void useAbility(int row, int column) override;
 };
 
 #endif // ATTACKUNIT_H

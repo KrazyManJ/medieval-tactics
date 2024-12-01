@@ -5,9 +5,9 @@
 
 class HealUnit : public Unit
 {
-    float m_healPower;
 public:
     float getHealPower();
+    void useAbility(int row, int column) override;
 };
 
 #endif // HEALUNIT_H

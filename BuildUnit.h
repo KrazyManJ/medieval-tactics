@@ -5,9 +5,9 @@
 
 class BuildUnit : public Unit
 {
-    float m_buildPower;
 public:
     float getBuildPower();
+    void useAbility(int row, int column) override;
 };
 
 #endif // BUILDUNIT_H

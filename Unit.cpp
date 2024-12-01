@@ -1,7 +1,10 @@
 #include "Unit.h"
 #include <cstdlib>
 
-Unit::Unit(float hp, int defense, int walkingRange, int abilityRange, int cost, std::vector<GroundType> enterableGroundType, Position positon)
+Unit::Unit(float hp, int defense, int walkingRange,
+           int abilityRange, int cost,
+           std::vector<GroundType> enterableGroundType, Position positon,
+           float power, std::string name, std::string description)
 {
     m_hp = hp;
     m_defense = defense;
@@ -10,6 +13,9 @@ Unit::Unit(float hp, int defense, int walkingRange, int abilityRange, int cost, 
     m_cost = cost;
     m_enterableGroundType = enterableGroundType;
     m_position = positon;
+    m_power = power;
+    m_name = name;
+    m_description = description;
 }
 
 float Unit::getHp()

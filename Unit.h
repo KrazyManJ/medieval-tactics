@@ -15,11 +15,15 @@ class Unit
     int m_cost;
     std::vector<GroundType> m_enterableGroundType;
     Position m_position;
+    float m_power;
+    std::string m_name;
+    std::string m_description;
 
 public:
     Unit(float hp, int defense, int walkingRange,
          int abilityRange, int cost,
-         std::vector<GroundType> enterableGroundType, Position positon);
+         std::vector<GroundType> enterableGroundType, Position positon,
+         float power, std::string name, std::string description);
     float getHp();
     void setHp(float hp);
     int getDefense();
