@@ -1,5 +1,8 @@
+#include "GameContext.h"
+
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +16,8 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("cpp_zs2024_xkorcak", "Main");
-
+    GameContext game;
+    QQmlContext* context = engine.rootContext();
+    context->setContextProperty("game",&game);
     return app.exec();
 }
