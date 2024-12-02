@@ -17,7 +17,7 @@ public:
 
     void addUnit(Unit* unit);
 
-    void useSelectedUnit();
+    void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);
 
     bool hasSelectedUnit() const;
