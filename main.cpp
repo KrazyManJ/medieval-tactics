@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("cpp_zs2024_xkorcak", "Main");
+    engine.loadFromModule("medieval-tactics", "Main");
     GameContext game;
     QQmlContext* context = engine.rootContext();
     context->setContextProperty("game",&game);
