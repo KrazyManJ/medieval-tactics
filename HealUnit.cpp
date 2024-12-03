@@ -2,7 +2,7 @@
 
 
 
-float HealUnit::getAttackPower()
+float HealUnit::getHealPower()
 {
     return m_power;
 }

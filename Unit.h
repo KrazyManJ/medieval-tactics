@@ -15,9 +15,10 @@ class Unit
     int m_cost;
     std::vector<GroundType> m_enterableGroundType;
     Position m_position;
-    float m_power;
     std::string m_name;
     std::string m_description;
+protected:
+    float m_power;
 
 public:
     Unit(float hp, int defense, int walkingRange,
