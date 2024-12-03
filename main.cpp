@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+    GameContext gameContext;
+    engine.rootContext()->setContextProperty("gameContext",&gameContext);
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
@@ -16,8 +18,5 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("medieval-tactics", "Main");
-    GameContext game;
-    QQmlContext* context = engine.rootContext();
-    context->setContextProperty("game",&game);
     return app.exec();
 }
