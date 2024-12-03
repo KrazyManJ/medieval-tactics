@@ -2,7 +2,12 @@
 
 
 
-float HealUnit::getHealPower()
+float HealUnit::getAttackPower()
 {
-    return m_healPower;
+    return m_power;
+}
+
+void HealUnit::useAbility(int row, int column)
+{
+
 }
