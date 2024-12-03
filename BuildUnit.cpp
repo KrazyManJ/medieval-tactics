@@ -1,7 +1,12 @@
 #include "BuildUnit.h"
 
 
-float BuildUnit::getBuildPower()
+float BuildUnit::getAttackPower()
 {
-    return m_buildPower;
+    return m_power;
+}
+
+void BuildUnit::useAbility(int row, int column)
+{
+
 }
