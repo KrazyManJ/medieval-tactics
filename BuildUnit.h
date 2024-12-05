@@ -6,7 +6,9 @@
 class BuildUnit : public Unit
 {
 public:
-    //testing out git on my chromebook
+    BuildUnit(float hp, int defense, int walkingRange, int abilityRange, int cost,
+              const std::vector<GroundType>& enterableGroundType, const Position& position,
+              float buildPower, const std::string& name, const std::string& description);
     float getBuildPower();
     void useAbility(int row, int column) override;
 };
