@@ -37,7 +37,7 @@ public:
     bool isInAbilityRange(int row, int column);
     std::vector<GroundType> getEnterableGroundType();
     virtual void useAbility(int row, int column)= 0;
-    QVariantMap serialize();
+    QVariantMap serialize() override;
     Position getPosition();
     ~Unit();
 
