@@ -3,7 +3,7 @@ Item{
     id: map
     property int columns: 5
     property int rows: 5
-    width: column * mapObject.width
+    width: column * mapObject.width + (column-1) * grid.spacing
     Grid{
         id: grid
         columns: map.columns
