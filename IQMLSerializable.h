@@ -5,7 +5,7 @@
 
 
 class IQMLSerializable {
-    virtual QVariantMap serialize();
+    virtual QVariantMap serialize() = 0;
 };
 
 #endif // IQMLSERIALIZABLE_H
