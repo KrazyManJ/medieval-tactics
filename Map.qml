@@ -9,15 +9,15 @@ Item{
         rows: map.rows
         spacing: 5
 
-    Repeater{
-        id: model
-        model: map.rows * map.columns
-        MapObject {
-            property int row: Math.floor(index / g.rows)
-            property int column: (index % grid.rows)
+        Repeater{
+            id: model
+            model: map.rows * map.columns
+            MapObject {
+                property int row: Math.floor(index / grid.rows)
+                property int column: (index % grid.rows)
+            }
+            
         }
-        
-    }
     }
 }
 
