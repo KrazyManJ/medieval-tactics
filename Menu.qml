@@ -4,8 +4,10 @@ import QtQuick
 Item  {
     id: mainMenu
     signal gameCreated()
-    signal gameQuit()
 
+Column {
+    anchors.centerIn: parent
+    spacing: 20
     Button {
         title: "Start game"
         MouseArea {
@@ -22,10 +24,12 @@ Item  {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                mainMenu.gameQuit()
+                Qt.quit()
             }
         }
     }
+}
+
 
 
 }

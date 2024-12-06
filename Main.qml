@@ -12,12 +12,9 @@ Window {
     }
 
     Menu {
-        anchors.fill: parent
+        anchors.centerIn: parent
         onGameCreated:{
             console.log("created game")
-        }
-        onGameQuit: {
-            Qt.quit()
         }
     }
 

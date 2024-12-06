@@ -3,7 +3,6 @@ import QtQuick
 Rectangle{
     id: button
     property string title: "title"
-    anchors.centerIn: parent
 
     color: "grey"
     width: 200
