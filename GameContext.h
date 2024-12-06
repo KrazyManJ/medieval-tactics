@@ -14,6 +14,8 @@ public:
 
     Q_INVOKABLE void createNewGame();
 
+    Q_INVOKABLE QVariantMap getMapDetails();
+
 
 signals:
 };
