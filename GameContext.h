@@ -9,13 +9,10 @@
 class GameContext : public QObject
 {
     Q_OBJECT
-private:
-    Game* game;
 public:
     explicit GameContext(QObject *parent = nullptr);
 
     Q_INVOKABLE void createNewGame();
-    Q_INVOKABLE QSize getMapSize();
 
 
 signals:

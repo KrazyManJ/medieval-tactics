@@ -1,32 +1,46 @@
 #include "Game.h"
 
+#include <AttackUnit.h>
+
 Game::Game() {
+    if (Game::instance != nullptr)
+        delete Game::instance;
+    Game::instance = this;
     map = new Map();
-    player1 = new Player("blue",5000);
-    player2 = new Player("orange",5000);
-    isPlayerTwoOnTurn = false;
+    firstPlayer = new Player(FIRST_PLAYER_COLOR,START_MONEY);
+    secondPlayer = new Player(SECOND_PLAYER_COLOR,START_MONEY);
+    firstPlayerOnTurn = true;
 }
 
-Map* Game::getMap(){
-    return map;
+Game* Game::getInstance() {
+    if (Game::instance == nullptr)
+        Game::instance = new Game();
+    return Game::instance;
 }
 
+Map* Game::getMap(){ return map; }
+
+Player* Game::getFirstPlayer() { return firstPlayer; }
+
+Player* Game::getSecondPlayer() { return secondPlayer; }
+
+
+bool Game::isFirstPlayerOnTurn() { return firstPlayerOnTurn; }
 
 Player* Game::getPlayerOnTurn() {
-    return (isPlayerTwoOnTurn) ? player2 : player1;
+    return (isFirstPlayerOnTurn()) ? firstPlayer : secondPlayer;
 }
 
-
 Player* Game::getOponentPlayerOfPlayerOnTurn() {
-    return (isPlayerTwoOnTurn) ? player1 : player2;
+    return (isFirstPlayerOnTurn()) ? firstPlayer : secondPlayer;
 }
 
 void Game::switchActivePlayer() {
-    isPlayerTwoOnTurn = !isPlayerTwoOnTurn;
+    firstPlayerOnTurn = !firstPlayerOnTurn;
 }
 
 Game::~Game() {
     delete map;
-    delete player1;
-    delete player2;
+    delete firstPlayer;
+    delete secondPlayer;
 }

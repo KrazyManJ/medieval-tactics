@@ -15,15 +15,17 @@ private:
 public:
     Player(std::string color, int money);
 
+    std::vector<Unit*> getUnits() const;
+    Unit* getSelectedUnit() const;
+    std::string getColor() const;
+    int getMoney() const;
+
+    bool hasSelectedUnit() const;
     void addUnit(Unit* unit);
+    void selectUnit(int index);
 
     void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);
-
-    bool hasSelectedUnit() const;
-    std::vector<Unit*>::iterator getSelectedUnit() const;
-    std::string getColor() const;
-    int getMoney() const;
 
     ~Player();
 };
