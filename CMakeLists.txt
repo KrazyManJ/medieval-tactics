@@ -36,6 +36,7 @@ qt_add_qml_module(app-medieval-tactics
         QML_FILES MapObject.qml
         SOURCES IQMLSerializable.h
         QML_FILES Map.qml
+        RESOURCES assets.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

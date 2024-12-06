@@ -1,26 +1,35 @@
 import QtQuick
 
 Window {
-    width: 640
-    height: 480
+    width: 1280
+    height: 720
     visible: true
     title: qsTr("Medieval tactics")
     color: "#EEE"
 
-    function changeLayout() {
-
-    }
-
     Menu {
+        id: menu
         anchors.centerIn: parent
-        onGameCreated:{
-            console.log("created game")
+        onGameCreated: {
+            map.visible = true
+            unitControls.visible = true
+            menu.visible = false
         }
     }
 
-
+    Map {
+        id: map
+        anchors {
+            // bottom: unitControls.top
+            horizontalCenter: parent.horizontalCenter
+        }
+        visible: false
+        rows: 5
+        columns: 5
+    }
 
     UnitControls {
+        id: unitControls
         visible: false
         anchors {
             left: parent.left

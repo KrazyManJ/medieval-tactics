@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/druid.png</file>
+        <file>assets/priest.png</file>
+        <file>assets/warrior.png</file>
+    </qresource>
+</RCC>
