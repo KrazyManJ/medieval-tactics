@@ -32,6 +32,8 @@ qt_add_qml_module(app-medieval-tactics
         QML_FILES UnitControls.qml
         QML_FILES Button.qml
         QML_FILES Menu.qml
+        QML_FILES Unit.qml
+        QML_FILES MapObject.qml
         SOURCES IQMLSerializable.h
 )
 
