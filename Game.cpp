@@ -39,6 +39,22 @@ void Game::switchActivePlayer() {
     firstPlayerOnTurn = !firstPlayerOnTurn;
 }
 
+void Game::moveUnitOfCurrentPlayer(int row, int column) {
+    if (true /* TODO: implement Map::isInRange(Position) */)
+        throw std::logic_error("Action out of map");
+    if (map->getObjectAt(row,column)->isSolid())
+        throw std::logic_error("Cannot move into solid object");
+    getPlayerOnTurn()->moveSelectedUnit(row,column);
+}
+
+void Game::useUnitAbilityOfCurrentPlayer(int row, int column) {
+    if (true /* TODO: implement Map::isInRange(Position) */)
+        throw std::logic_error("Action out of map");
+    if (map->getObjectAt(row,column)->isSolid())
+        throw std::logic_error("Cannot move into solid object");
+    getPlayerOnTurn()->useSelectedUnit(row, column);
+}
+
 Game::~Game() {
     delete map;
     delete firstPlayer;

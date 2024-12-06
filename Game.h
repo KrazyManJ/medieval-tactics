@@ -33,6 +33,9 @@ public:
 
     void switchActivePlayer();
 
+    void moveUnitOfCurrentPlayer(int row, int column);
+    void useUnitAbilityOfCurrentPlayer(int row, int column);
+
     ~Game();
 };
 
