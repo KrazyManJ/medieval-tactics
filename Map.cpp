@@ -27,6 +27,14 @@ MapObject* Map::getObjectAt(int row, int column) {
     return mapMatrix.at(row).at(column);
 }
 
+QVariantMap Map::serialize() {
+    QVariantMap map;
+    map["width"] = getWidth();
+    map["height"] = getHeight();
+    return map;
+}
+
+
 Map::~Map() {
     for (int r = 0; r < rows; r++) {
         for (int c = 0; c < columns; c++) {

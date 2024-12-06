@@ -4,11 +4,13 @@
 
 #ifndef MAP_H
 #define MAP_H
+#include "IQMLSerializable.h"
 #include "MapObject.h"
 #include <array>
 
 
-class Map {
+
+class Map:public IQMLSerializable {
     static constexpr int rows = 5;
     static constexpr int columns = 5;
     std::array<std::array<MapObject*, columns>, rows> mapMatrix;
@@ -18,6 +20,7 @@ public:
        int getWidth();
        int getHeight();
        MapObject* getObjectAt(int row, int column);
+       QVariantMap serialize();
        ~Map();
 };
 
