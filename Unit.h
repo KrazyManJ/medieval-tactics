@@ -4,9 +4,11 @@
 #include <GroundType.h>
 #include "vector"
 #include "iostream"
+#include "IQMLSerializable.h"
 
 
-class Unit
+
+class Unit : public IQMLSerializable
 {
     float m_hp;
     int m_defense;
@@ -35,6 +37,8 @@ public:
     bool isInAbilityRange(int row, int column);
     std::vector<GroundType> getEnterableGroundType();
     virtual void useAbility(int row, int column)= 0;
+    QVariantMap serialize();
+    Position getPosition();
     ~Unit();
 
 };

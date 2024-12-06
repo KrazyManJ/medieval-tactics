@@ -73,3 +73,19 @@ std::string Unit::getDescription()
 {
     return m_description;
 }
+
+QVariantMap Unit::serialize()
+{
+    QVariantMap map;
+    map["name"] = getName();
+    QVariantMap pos;
+    pos["row"] = getPosition().row;
+    pos["column"] = getPosition().column;
+    map["position"] = pos;
+    
+
+}
+Position Unit::getPosition()
+{
+    return m_position;
+}
