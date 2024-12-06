@@ -23,6 +23,8 @@ Window {
             // bottom: unitControls.top
             horizontalCenter: parent.horizontalCenter
         }
+        width: 600  
+        height: 400
         visible: false
         rows: 5
         columns: 5
