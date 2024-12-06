@@ -7,6 +7,22 @@ Window {
     title: qsTr("Medieval tactics")
     color: "#EEE"
 
+    function changeLayout() {
+
+    }
+
+    Menu {
+        anchors.fill: parent
+        onGameCreated:{
+            console.log("created game")
+        }
+        onGameQuit: {
+            Qt.quit()
+        }
+    }
+
+
+
     UnitControls {
         visible: false
         anchors {
