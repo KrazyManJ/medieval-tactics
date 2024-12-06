@@ -63,3 +63,13 @@ std::vector<GroundType> Unit::getEnterableGroundType()
 {
     return m_enterableGroundType;
 }
+
+std::string Unit::getName()
+{
+    return m_name;
+}
+
+std::string Unit::getDescription()
+{
+    return m_description;
+}

@@ -28,6 +28,8 @@ public:
     float getHp();
     void setHp(float hp);
     int getDefense();
+    std::string getName();
+    std::string getDescription();
     void move(int row, int column);
     bool isInWalkingRange(int row, int column);
     bool isInAbilityRange(int row, int column);
