@@ -2,7 +2,7 @@ import QtQuick
 
 Rectangle{
     id: mapObject
-    width: 200
+    width: 50
     height: 50
     property int row: 0
     property int column: 0
