@@ -30,6 +30,7 @@ qt_add_qml_module(app-medieval-tactics
         SOURCES GameContext.h GameContext.cpp
         SOURCES
         QML_FILES UnitControls.qml
+        QML_FILES Button.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
