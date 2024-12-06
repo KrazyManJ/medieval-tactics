@@ -1,13 +1,23 @@
 import QtQuick
-
-Grid{
+Item{
+    id: map
+    property int columns: 5
+    property int rows: 5
+    Grid{
     id: grid
-    columns: 5
-    rows: 5
+    columns: map.columns
+    rows: map.rows
     spacing: 5
 
     Repeater{
-        model: columns * rows
-        MapObject {}
+        id: Model
+        model: map.rows * map.columns
+        MapObject {
+            property int row: Math.floor(index / g.rows)
+            property int column: index
+        }
+        
+    }
     }
 }
+

@@ -1,9 +1,11 @@
 import QtQuick
 
 Rectangle{
-    id: MapObject
+    id: mapObject
     width: 200
     height: 50
+    property int row: 0
+    property int column: 0
     color: "green"
     border.color: "black"
     border.width: 5

@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-    id: Unit
+    id: unit
     property string color
     Image{
         source: "/assets/druid.png"
