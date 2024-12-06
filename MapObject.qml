@@ -2,17 +2,29 @@ import QtQuick
 
 Rectangle{
     id: MapObject
-    property string title: "MapObject"
     width: 200
     height: 50
     color: "green"
+    border.color: "black"
+    border.width: 5
 
+    Unit{
+        visible: false; 
+        anchors{
+            fill: parent
+        }
+    }
     states: [
         State {
-            
+            name: "hover"
+            border.color: "black"
+            border.width: 10
         },
         State {
-            
+            name: "pressed"
+            border.color: "red"
+            border.width: 10          
+
         }
 
 
