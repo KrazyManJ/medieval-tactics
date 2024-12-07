@@ -83,7 +83,7 @@ QVariantMap Unit::serialize()
     pos["column"] = getPosition().column;
     map["position"] = pos;
     
-
+    return map;
 }
 Position Unit::getPosition()
 {
