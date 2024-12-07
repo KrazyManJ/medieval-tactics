@@ -14,6 +14,20 @@ Window {
             map.visible = true
             unitControls.visible = true
             menu.visible = false
+            quitGame.visible = true
+        }
+    }
+    Button {
+        id: quitGame
+        visible: false
+        title: "Quit"
+        width: 140
+        height: 40
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                Qt.quit()
+            }
         }
     }
 
