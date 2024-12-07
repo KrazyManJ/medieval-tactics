@@ -57,3 +57,11 @@ void Player::moveSelectedUnit(int row, int column)  {
 Player::~Player() {
     units.clear();
 }
+
+QVariantMap Player::serialize() {
+    QVariantMap map;
+    QVariantList unitList;
+    for (auto* unit : units) unitList.append(unit->serialize());
+    map["units"] = unitList;
+    return map;
+}

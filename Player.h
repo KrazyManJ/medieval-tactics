@@ -3,9 +3,10 @@
 
 #include <string>
 #include <vector>
+#include "IQMLSerializable.h"
 #include "Unit.h"
 
-class Player
+class Player : public IQMLSerializable
 {
 private:
     std::vector<Unit*> units;
@@ -26,6 +27,8 @@ public:
 
     void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);
+
+    QVariantMap serialize() override;
 
     ~Player();
 };
