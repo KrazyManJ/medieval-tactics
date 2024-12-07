@@ -77,7 +77,7 @@ std::string Unit::getDescription()
 QVariantMap Unit::serialize()
 {
     QVariantMap map;
-    map["name"] = getName();
+    map["name"] = QString::fromUtf8(getName());
     QVariantMap pos;
     pos["row"] = getPosition().row;
     pos["column"] = getPosition().column;
