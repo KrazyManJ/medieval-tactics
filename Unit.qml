@@ -1,10 +1,18 @@
 import QtQuick
-Item{
+Rectangle {
     id: unit
-    property string color
-    Image{
-        source: "/assets/druid.png"
+    property color color
+
+    border {
+        color: color
+        width: 1
     }
 
-
+    Image{
+        anchors.fill: parent
+        source: "qrc:/assets/druid.png"
+        mipmap: true
+        mirror: true
+        anchors.margins: 1
+    }
 }
