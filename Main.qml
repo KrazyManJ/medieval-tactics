@@ -6,6 +6,8 @@ Window {
     visible: true
     title: qsTr("Medieval tactics")
     color: "#EEE"
+    minimumWidth: 720
+    minimumHeight: 480
 
     Menu {
         id: menu
