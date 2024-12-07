@@ -17,19 +17,29 @@ Window {
         }
     }
 
-    Map {
-        id: map
+    Item {
+        id: mapContainer
+
         anchors {
-            // bottom: unitControls.top
-            horizontalCenter: parent.horizontalCenter
+            top: parent.top
+            left: parent.left
+            right: parent.right
+            bottom: unitControls.top
         }
-        visible: false
 
-        property var mapData: gameContext.getMapDetails()
+        Map {
+            id: map
 
-        rows: mapData.height
-        columns: mapData.width
+            anchors.centerIn: parent
+            visible: false
+
+            property var mapData: gameContext.getMapDetails()
+
+            rows: mapData.height
+            columns: mapData.width
+        }
     }
+
 
     UnitControls {
         id: unitControls
