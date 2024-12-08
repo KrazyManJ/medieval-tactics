@@ -63,5 +63,6 @@ QVariantMap Player::serialize() {
     QVariantList unitList;
     for (auto* unit : units) unitList.append(unit->serialize());
     map["units"] = unitList;
+    map["color"] = QString::fromUtf8(getColor().c_str());
     return map;
 }
