@@ -16,6 +16,7 @@ public:
 
     Q_INVOKABLE QVariantMap getMapDetails();
 
+    Q_INVOKABLE QVariantMap getPlayersDetails();
 
 signals:
 };
