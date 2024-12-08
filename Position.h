@@ -5,6 +5,7 @@
 
 #endif // POSITION_H
 
+// TODO: make inherit IQMLSerializable
 struct Position {
     int row;
     int column;

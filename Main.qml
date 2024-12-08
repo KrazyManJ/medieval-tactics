@@ -19,6 +19,8 @@ Window {
             quitGame.visible = true
         }
     }
+
+    // TODO: Pack into one Game Component
     Button {
         id: quitGame
         visible: false
