@@ -45,7 +45,13 @@ Rectangle {
 
             Button {
                 title: "Move"
-                onClicked: unitControls.moveButtonClicked()
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    onClicked: unitControls.moveButtonClicked()
+                }
+
             }
             Button {
                 title: "Attack"
