@@ -78,13 +78,10 @@ QVariantMap Unit::serialize()
 {
     QVariantMap map;
     map["name"] = QString::fromUtf8(getName());
-    QVariantMap pos;
-    pos["row"] = getPosition().row;
-    pos["column"] = getPosition().column;
-    map["position"] = pos;
-    
+    map["position"] = getPosition().serialize();
     return map;
 }
+
 Position Unit::getPosition()
 {
     return m_position;
