@@ -30,7 +30,6 @@ qt_add_qml_module(app-medieval-tactics
         SOURCES Player.h Player.cpp
         SOURCES Game.h Game.cpp
         SOURCES GameContext.h GameContext.cpp
-        SOURCES
         QML_FILES UnitControls.qml
         QML_FILES Button.qml
         QML_FILES Menu.qml
