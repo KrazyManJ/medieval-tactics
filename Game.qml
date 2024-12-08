@@ -1,16 +1,18 @@
 import QtQuick
 
 Item {
+    id: game
+    signal quitButtonClicked()
+
     Button {
         id: quitGame
         title: "Quit"
         width: 140
         height: 40
+
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                Qt.quit()
-            }
+            onClicked: game.quitButtonClicked()
         }
     }
 

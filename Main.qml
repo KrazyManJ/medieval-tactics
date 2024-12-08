@@ -12,6 +12,7 @@ Window {
     Menu {
         id: menu
         anchors.centerIn: parent
+
         onGameCreated: {
             menu.visible = false
             game.visible = true
@@ -19,9 +20,13 @@ Window {
     }
 
     Game {
-        anchors.fill: parent
-
         id: game
+        anchors.fill: parent
         visible: false
+
+        onQuitButtonClicked: {
+            menu.visible = true
+            game.visible = false
+        }
     }
 }
