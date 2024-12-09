@@ -1,5 +1,8 @@
 import QtQuick
 
+// TODO: Make button hover effect (change color when hovered instead of pressed
+// TODO: Make cursor to be point when hovered
+
 Rectangle{
     id: button
     property string title: "title"

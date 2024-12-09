@@ -18,7 +18,7 @@ Rectangle {
             anchors.centerIn: parent
             font {
                 italic: true
-                pixelSize: 20
+                pixelSize: 40
             }
         }
     }
