@@ -1,6 +1,5 @@
 import QtQuick
 
-// TODO: Make button hover effect (change color when hovered instead of pressed
 // TODO: Make cursor to be point when hovered
 
 Rectangle{
@@ -20,21 +19,38 @@ Rectangle{
     }
 
     states: [
+
         State {
             name: "pressed"
             PropertyChanges {
                 target: button
-                color: "#A9A9A9"
+            }
+        },
+
+        State {
+            name: "hover"
+            PropertyChanges {
+                target: button
+                color: "#696969"
             }
         }
-
     ]
 
     MouseArea {
         anchors.fill: parent
+        hoverEnabled: true
 
-        onClicked:
+        onClicked: {
             button.state = "pressed"
+        }
+
+        onEntered: {
+            button.state = "hover"
+        }
+
+        onExited: {
+            button.state = ""
+        }
 
     }
 }
