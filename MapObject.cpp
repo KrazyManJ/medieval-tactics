@@ -17,6 +17,14 @@ bool MapObject::isSolid() {
 	return m_solid;
 }
 
+void MapObject::setIsSolid(bool value) {
+    m_solid = value;
+}
+
+void MapObject::setType(GroundType newType) {
+    m_groundType = newType;
+}
+
 MapObject::~MapObject(){
 
 }
