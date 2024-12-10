@@ -1,31 +1,45 @@
 import QtQuick
 
-// TODO: Add title above buttons
-
-Item  {
+Item {
     id: mainMenu
     signal gameCreated()
 
     Column {
         anchors.centerIn: parent
-        spacing: 20
-        Button {
-            title: "Start game"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    gameContext.createNewGame()
-                    mainMenu.gameCreated()
-                }
-            }
+        anchors.verticalCenterOffset: -50
+        spacing: 40
+        width: parent.width
+
+        Text {
+            text: "Medieval-Tactics"
+            font.pixelSize: 82
+            font.bold: true
+            horizontalAlignment: Text.AlignHCenter
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        Button {
-            title: "Quit"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    Qt.quit()
+        Column {
+            spacing: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Button {
+                title: "Start game"
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        gameContext.createNewGame()
+                        mainMenu.gameCreated()
+                    }
+                }
+            }
+
+            Button {
+                title: "Quit"
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        Qt.quit()
+                    }
                 }
             }
         }
