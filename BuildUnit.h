@@ -2,6 +2,7 @@
 #define BUILDUNIT_H
 
 #include "Unit.h"
+#include "Game.h"
 
 class BuildUnit : public Unit
 {
