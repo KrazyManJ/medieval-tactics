@@ -18,10 +18,13 @@ void AttackUnit::useAbility(int row, int column)
     auto* game = Game::getInstance();
     auto* enemyPlayer = game->getOponentPlayerOfPlayerOnTurn();
     std::vector<Unit*> enemyUnits = enemyPlayer->getUnits();
+
     for(Unit* enemyUnit : enemyUnits){
+
         if(enemyUnit->getPosition().row == row
             and enemyUnit->getPosition().column == column){
             enemyUnit->setHp(enemyUnit->getHp()-(getAttackPower()/enemyUnit->getDefense()));
         };
+
     };
 }

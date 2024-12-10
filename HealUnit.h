@@ -2,6 +2,7 @@
 #define HEALUNIT_H
 
 #include "Unit.h"
+#include "Game.h"
 
 class HealUnit : public Unit
 {
