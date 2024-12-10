@@ -2,6 +2,7 @@
 #define ATTACKUNIT_H
 
 #include "Unit.h"
+#include "Game.h"
 
 class AttackUnit : public Unit
 {
