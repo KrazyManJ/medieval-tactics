@@ -18,6 +18,6 @@ void BuildUnit::useAbility(int row, int column)
     auto* game = Game::getInstance();
     auto* map = game->getMap();
     auto* mapObject = map->getObjectAt(row, column);
-    // mapObject->setType(Tree)
+    // mapObject->setType(Tree); mozna takhle TODO
 
 }
