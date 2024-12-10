@@ -14,7 +14,9 @@ class MapObject {
 public:
     MapObject(bool solid, GroundType groundtype);
     GroundType getType();
-    bool isSolid();
+    bool isSolid(bool value);
+    void setIsSolid();
+    void setType(GroundType newType);
     ~MapObject();
 };
 

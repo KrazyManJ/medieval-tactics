@@ -37,7 +37,4 @@ Rectangle{
             button.state = "pressed"
 
     }
-
-
-
 }
