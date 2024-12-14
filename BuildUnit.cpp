@@ -18,6 +18,7 @@ void BuildUnit::useAbility(int row, int column)
     auto* game = Game::getInstance();
     auto* map = game->getMap();
     auto* mapObject = map->getObjectAt(row, column);
-    // mapObject->setType(Tree); mozna takhle TODO
+    mapObject->setIsSolid(true);
+    mapObject->setType(GroundType::Tree);
 
 }
