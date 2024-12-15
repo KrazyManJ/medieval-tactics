@@ -86,3 +86,8 @@ Position Unit::getPosition()
 {
     return m_position;
 }
+
+int Unit::getWalkingRange()
+{
+    return m_walkingRange;
+}
