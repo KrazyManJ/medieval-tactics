@@ -18,6 +18,7 @@ Game::Game() {
     secondPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=4,.column=1},5,"Warrior","This is knight, now he just moves"));
 
     firstPlayerOnTurn = true;
+    turns = 0;
 }
 
 Game* Game::getInstance() {
@@ -48,19 +49,29 @@ void Game::switchActivePlayer() {
 }
 
 void Game::moveUnitOfCurrentPlayer(int row, int column) {
-    if (true /* TODO: implement Map::isInRange(Position) */)
+    if (!map->isInRange(row,column))
         throw std::logic_error("Action out of map");
     if (map->getObjectAt(row,column)->isSolid())
         throw std::logic_error("Cannot move into solid object");
     getPlayerOnTurn()->moveSelectedUnit(row,column);
+    markTurn();
 }
 
 void Game::useUnitAbilityOfCurrentPlayer(int row, int column) {
-    if (true /* TODO: implement Map::isInRange(Position) */)
+    if (!map->isInRange(row,column))
         throw std::logic_error("Action out of map");
     if (map->getObjectAt(row,column)->isSolid())
         throw std::logic_error("Cannot move into solid object");
     getPlayerOnTurn()->useSelectedUnit(row, column);
+    markTurn();
+}
+
+void Game::markTurn() {
+    turns++;
+    if (turns == TURNS_PER_ROUND) {
+        firstPlayerOnTurn = !firstPlayerOnTurn;
+        turns = 0;
+    }
 }
 
 Game::~Game() {

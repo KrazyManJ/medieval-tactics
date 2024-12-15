@@ -1,7 +1,7 @@
 import QtQuick
 
 Rectangle {
-    id: unitControl
+    id: unitControls
     color: "#AAA"
     height: 150
 
@@ -17,6 +17,7 @@ Rectangle {
         noUnitSelected.visible = false;
         selectedUnit.visible = true;
         unitPreview.img = foundUnit.unit.name.toLowerCase();
+        unitLabel.text = foundUnit.unit.name
     }
 
     Item {
@@ -53,6 +54,15 @@ Rectangle {
                 leftMargin: 25
                 topMargin: 25
             }
+        }
+        Text {
+            id: unitLabel
+            anchors {
+                left: unitPreview.right
+                top: unitPreview.top
+                leftMargin: 10
+            }
+            font.pixelSize: 36
         }
 
         Row {

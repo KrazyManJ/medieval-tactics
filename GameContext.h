@@ -16,9 +16,13 @@ public:
 
     Q_INVOKABLE QVariantMap getMapDetails();
 
-    Q_INVOKABLE QVariantMap getPlayersDetails();
+    Q_INVOKABLE QVariant getUnitByPos(int row, int column);
 
-    Q_INVOKABLE QVariant getUnitByPos(int row, int col);
+    Q_INVOKABLE QVariant getCurrentPlayerOnTurn();
+
+    Q_INVOKABLE void selectUnitOfCurrentPlayer(int row, int column);
+
+    Q_INVOKABLE QVariant getSelectedUnitOfCurrentPlayer();
 
 signals:
 };

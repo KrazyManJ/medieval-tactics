@@ -9,11 +9,13 @@ class Game
 {
 private:
     inline static Game* instance = nullptr;
+    static constexpr int TURNS_PER_ROUND = 1;
 
     Map* map;
     Player* firstPlayer;
     Player* secondPlayer;
     bool firstPlayerOnTurn;
+    int turns;
 public:
 
     inline static const std::string FIRST_PLAYER_COLOR = "blue";
@@ -35,6 +37,8 @@ public:
 
     void moveUnitOfCurrentPlayer(int row, int column);
     void useUnitAbilityOfCurrentPlayer(int row, int column);
+
+    void markTurn();
 
     ~Game();
 };

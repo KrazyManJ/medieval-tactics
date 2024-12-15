@@ -23,7 +23,7 @@ public:
 
     bool hasSelectedUnit() const;
     void addUnit(Unit* unit);
-    void selectUnit(int index);
+    void selectUnit(int row, int column);
 
     void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);

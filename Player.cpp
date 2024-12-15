@@ -19,11 +19,14 @@ std::vector<Unit*> Player::getUnits() const {
     return units;
 }
 
-void Player::selectUnit(int index) {
-    if (index > units.size())
+void Player::selectUnit(int row, int column) {
+    auto unitIt = std::find_if(units.begin(), units.end(), [row,column](Unit* unit){
+        Position pos = unit->getPosition();
+        return pos.row == row && pos.column == column;
+    });
+    if (unitIt == units.end())
         throw std::out_of_range("Index out of range");
-    selectedUnit = units.begin();
-    std::advance(selectedUnit,index);
+    selectedUnit = unitIt;
 }
 
 Unit* Player::getSelectedUnit() const {
@@ -60,9 +63,6 @@ Player::~Player() {
 
 QVariantMap Player::serialize() {
     QVariantMap map;
-    QVariantList unitList;
-    for (auto* unit : units) unitList.append(unit->serialize());
-    map["units"] = unitList;
     map["color"] = QString::fromUtf8(getColor().c_str());
     return map;
 }
