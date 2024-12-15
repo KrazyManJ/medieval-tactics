@@ -1,7 +1,7 @@
 import QtQuick
 Rectangle {
     id: unit
-    property color color
+    property string color
     property string img: "druid"
 
     border {
