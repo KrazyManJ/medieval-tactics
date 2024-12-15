@@ -64,6 +64,7 @@ Item {
 
             onUnitSelected: {
                 unitControls.selectUnit()
+                //map.redraw()
             }
         }
     }
