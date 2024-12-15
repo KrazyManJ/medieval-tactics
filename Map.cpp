@@ -23,6 +23,14 @@ MapObject* Map::getObjectAt(int row, int column) {
     return mapMatrix.at(row).at(column);
 }
 
+bool Map::isInRange(int row, int column) {
+    if (row >= 0 && row < rows && column >= 0 && column < columns) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 QVariantMap Map::serialize() {
     QVariantMap map;
     map["width"] = getWidth();

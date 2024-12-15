@@ -15,7 +15,7 @@ public:
        Map();
        int getWidth();
        int getHeight();
-       // TODO: Implement Map::isInRange(int row, int column);
+       bool isInRange(int row, int column);
        MapObject* getObjectAt(int row, int column);
        QVariantMap serialize();
        ~Map();
