@@ -87,7 +87,7 @@ Item {
         }
 
         onMoveButtonClicked: {
-            map.state = "move"
+            map.state = map.state == "display" ? "move" : "display"
             map.redraw()
             currentPlayer.updateText()
         }

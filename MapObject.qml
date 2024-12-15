@@ -2,8 +2,8 @@ import QtQuick
 
 Rectangle{
     id: mapObject
-    property int row: 0
-    property int column: 0
+    property int row: -1
+    property int column: -1
     signal unitSelected()
     state: "display"
 
