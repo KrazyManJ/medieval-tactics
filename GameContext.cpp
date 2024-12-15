@@ -21,3 +21,25 @@ Q_INVOKABLE QVariantMap GameContext::getPlayersDetails() {
     obj["player2"] = game->getSecondPlayer()->serialize();
     return obj;
 }
+
+Q_INVOKABLE QVariant GameContext::getUnitByPos(int row, int col) {
+    QVariant ret = QVariant::fromValue(nullptr);
+    Game* game = game->getInstance();
+
+    for (Player* player : {game->getFirstPlayer(),game->getSecondPlayer()}) {
+        std::vector<Unit*> units = player->getUnits();
+        auto unitIt = std::find_if(units.begin(), units.end(), [row,col](Unit* unit){
+            Position pos = unit->getPosition();
+            return pos.row == row && pos.column == col;
+        });
+        if (unitIt == units.end()) continue;
+
+        QVariantMap obj;
+        obj["color"] = QString::fromUtf8(player->getColor().c_str());
+        obj["unit"] = (*unitIt)->serialize();
+        ret.setValue(obj);
+        break;
+    }
+
+    return ret;
+}

@@ -18,6 +18,8 @@ public:
 
     Q_INVOKABLE QVariantMap getPlayersDetails();
 
+    Q_INVOKABLE QVariant getUnitByPos(int row, int col);
+
 signals:
 };
 
