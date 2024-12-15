@@ -4,6 +4,10 @@ Item {
     id: game
     signal quitButtonClicked()
 
+    function init() {
+        map.init()
+    }
+
     Button {
         id: quitGame
         title: "Quit"

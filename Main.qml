@@ -16,6 +16,7 @@ Window {
         onGameCreated: {
             menu.visible = false
             game.visible = true
+            game.init()
         }
     }
 
