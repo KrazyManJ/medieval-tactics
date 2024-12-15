@@ -3,5 +3,6 @@
         <file>assets/druid.png</file>
         <file>assets/priest.png</file>
         <file>assets/warrior.png</file>
+        <file>assets/menu-background.png</file>
     </qresource>
 </RCC>

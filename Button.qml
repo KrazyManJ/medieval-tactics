@@ -6,7 +6,7 @@ Rectangle{
     id: button
     property string title: "title"
 
-    color: "grey"
+    color: "#666666"
     width: 200
     height: 60
 
@@ -31,7 +31,7 @@ Rectangle{
             name: "hover"
             PropertyChanges {
                 target: button
-                color: "#696969"
+                color: "#505050"
             }
         }
     ]
@@ -39,6 +39,7 @@ Rectangle{
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
 
         onClicked: {
             button.state = "pressed"

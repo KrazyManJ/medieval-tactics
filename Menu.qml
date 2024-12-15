@@ -4,6 +4,13 @@ Item {
     id: mainMenu
     signal gameCreated()
 
+    Image {
+        anchors.centerIn: parent
+        fillMode: Image.Image.PreserveAspectFit
+        opacity: 0.4
+        source: "qrc:/assets/menu-background.png"
+    }
+
     Column {
         anchors.centerIn: parent
         anchors.verticalCenterOffset: -50
