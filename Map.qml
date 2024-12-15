@@ -6,16 +6,31 @@ Item{
     property int fieldSize: 70
     width: columns * fieldSize + (columns-1) * grid.spacing
     height: rows * fieldSize + (rows-1) * grid.spacing
+    state: "display"
 
     signal unitSelected()
 
 
-    function init(){
+    function redraw(){
         for (let i = 0; i < grid.children.length; i++) {
             let child = grid.children[i];
-            if (child.init) {
-                child.init();
+
+            if(!child.redraw)
+                continue
+
+            if(map.state == "display"){
+                map.state = "display"
+                child.redraw();
+            }else if(map.state == "move"){
+                if(gameContext.isUnitOfCurrentPlayerInWalkingRange(child.row, child.column)){
+                    child.state = "inRange"
+                }
+                else{
+                child.state = "move"
+                }
+                child.redraw();
             }
+
         }
     }
 
