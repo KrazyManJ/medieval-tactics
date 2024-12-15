@@ -7,7 +7,7 @@ Item{
     width: columns * fieldSize + (columns-1) * grid.spacing
     height: rows * fieldSize + (rows-1) * grid.spacing
 
-    signal unitSelected(row: int, column: int)
+    signal unitSelected()
 
 
     function init(){
@@ -18,6 +18,7 @@ Item{
             }
         }
     }
+
     Grid{
         id: grid
         columns: map.columns
@@ -28,8 +29,8 @@ Item{
             model: map.rows * map.columns
 
             MapObject {
-                onUnitSelected:(row,column)=>{
-                    map.unitSelected(row, column)
+                onUnitSelected:{
+                    map.unitSelected()
                 }
                 required property int index
                 row: Math.floor(index / grid.rows)
