@@ -1,7 +1,3 @@
-//
-// Created by MiloslavŠvábenský(ml on 30.11.2024.
-//
-
 #ifndef MAPOBJECT_H
 #define MAPOBJECT_H
 #include <GroundType.h>

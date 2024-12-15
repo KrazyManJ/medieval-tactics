@@ -1,7 +1,3 @@
-//
-// Created by MiloslavŠvábenský(ml on 30.11.2024.
-//
-
 #ifndef MAP_H
 #define MAP_H
 #include "IQMLSerializable.h"
