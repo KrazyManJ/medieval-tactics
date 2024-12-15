@@ -7,9 +7,21 @@ Rectangle {
 
     signal moveButtonClicked()
 
+    function selectUnit(row, column) {
+        const foundUnit = gameContext.getUnitByPos(row,column)
+        if (!foundUnit) {
+            noUnitSelected.visible = true;
+            selectedUnit.visible = false;
+        }
+
+        noUnitSelected.visible = false;
+        selectedUnit.visible = true;
+        unitPreview.img = foundUnit.unit.name.toLowerCase();
+    }
+
     Item {
         id: noUnitSelected
-
+        visible: true
         anchors.fill: parent
 
         Text {
@@ -24,10 +36,14 @@ Rectangle {
     }
 
     Item {
+        id: selectedUnit
+        visible: false
         anchors.fill: parent
 
         Image {
-            source: "qrc:/assets/druid.png"
+            id: unitPreview
+            property string img: "druid";
+            source: `qrc:/assets/${unitPreview.img}.png`
             width: 100
             height: 100
 
