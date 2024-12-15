@@ -5,6 +5,15 @@ Rectangle{
     property int row: 0
     property int column: 0
 
+    function init(){
+        const foundUnit = gameContext.getUnitByPos(mapObject.row,mapObject.column)
+        if(foundUnit != null){
+            unit.visible = true;
+            unit.color = foundUnit.color;
+            unit.img = foundUnit.unit.name.toLowerCase()
+        }
+    }
+
     color: "green"
 
     border {
@@ -14,8 +23,8 @@ Rectangle{
     }
 
     Unit{
-        visible: true;
-        color: "orange"
+        id: unit
+        visible: false;
 
         anchors {
             fill: parent
