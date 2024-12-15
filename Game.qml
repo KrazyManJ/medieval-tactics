@@ -39,6 +39,10 @@ Item {
 
             rows: mapData.height
             columns: mapData.width
+
+            onUnitSelected: (row,column) => {
+                unitControls.selectUnit(row,column)
+            }
         }
     }
 
