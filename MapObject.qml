@@ -4,6 +4,7 @@ Rectangle{
     id: mapObject
     property int row: 0
     property int column: 0
+    signal unitSelected(row: int, column: int)
 
     function init(){
         const foundUnit = gameContext.getUnitByPos(mapObject.row,mapObject.column)
@@ -29,6 +30,14 @@ Rectangle{
         anchors {
             fill: parent
         }
+        MouseArea{
+            anchors.fill: parent
+
+            onClicked: {
+                mapObject.unitSelected(mapObject.row, mapObject.column)
+            }
+        }
     }
+
 
 }
