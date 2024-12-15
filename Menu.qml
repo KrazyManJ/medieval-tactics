@@ -6,7 +6,7 @@ Item {
 
     Image {
         anchors.centerIn: parent
-        fillMode: Image.Image.PreserveAspectFit
+
         opacity: 0.4
         source: "qrc:/assets/menu-background.png"
     }
