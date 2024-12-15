@@ -24,6 +24,7 @@ public:
     bool hasSelectedUnit() const;
     void addUnit(Unit* unit);
     void selectUnit(int row, int column);
+    void deselectUnit();
 
     void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);

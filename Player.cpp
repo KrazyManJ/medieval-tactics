@@ -7,12 +7,12 @@
 Player::Player(std::string color, int money) {
     this->color = color;
     this->money = money;
-    selectedUnit = units.end();
+    deselectUnit();
 }
 
 void Player::addUnit(Unit* unit) {
     units.push_back(unit);
-    selectedUnit = units.end();
+    deselectUnit();
 }
 
 std::vector<Unit*> Player::getUnits() const {
@@ -49,12 +49,18 @@ void Player::useSelectedUnit(int row, int column)  {
     if (!hasSelectedUnit())
         throw new std::logic_error("No unit has player selected");
     getSelectedUnit()->useAbility(row, column);
+    deselectUnit();
 }
 
 void Player::moveSelectedUnit(int row, int column)  {
     if (!hasSelectedUnit())
         throw new std::logic_error("No unit has player selected");
     getSelectedUnit()->move(row,column);
+    deselectUnit();
+}
+
+void Player::deselectUnit() {
+    selectedUnit = units.end();
 }
 
 Player::~Player() {

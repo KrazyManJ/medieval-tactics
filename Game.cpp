@@ -10,7 +10,7 @@ Game::Game() {
     map = new Map();
 
     firstPlayer = new Player(FIRST_PLAYER_COLOR, START_MONEY);
-    firstPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=2,.column=4},5,"Warrior","This is warrior, now he just moves"));
+    firstPlayer->addUnit(new AttackUnit(1.0,1,2,1,1,{GroundType::Grass},{.row=2,.column=4},5,"Warrior","This is warrior, now he just moves"));
     firstPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=1,.column=3},5,"Druid","This is knight, now he just moves"));
 
     secondPlayer = new Player(SECOND_PLAYER_COLOR, START_MONEY);

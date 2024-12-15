@@ -14,6 +14,10 @@ Rectangle{
             unit.color = foundUnit.color;
             unit.img = foundUnit.unit.name.toLowerCase()
         }
+        else {
+            unit.visible = false;
+        }
+
     }
 
     color: "green"

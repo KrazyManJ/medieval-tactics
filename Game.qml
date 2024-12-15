@@ -22,6 +22,13 @@ Item {
 
     Text {
         id: currentPlayer
+
+        function updateText() {
+            const color = gameContext.getCurrentPlayerOnTurn().color;
+            currentPlayer.color = color;
+            currentPlayer.text = color;
+        }
+
         property string playerColor: gameContext.getCurrentPlayerOnTurn().color
         text: currentPlayer.playerColor;
         color: currentPlayer.playerColor;
@@ -64,7 +71,9 @@ Item {
 
             onUnitSelected: {
                 unitControls.selectUnit()
-                //map.redraw()
+                map.state = "display"
+                map.redraw()
+                currentPlayer.updateText()
             }
         }
     }
@@ -80,6 +89,7 @@ Item {
         onMoveButtonClicked: {
             map.state = "move"
             map.redraw()
+            currentPlayer.updateText()
         }
     }
 }
