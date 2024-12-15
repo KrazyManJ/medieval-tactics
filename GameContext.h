@@ -24,6 +24,8 @@ public:
 
     Q_INVOKABLE QVariant getSelectedUnitOfCurrentPlayer();
 
+    Q_INVOKABLE bool isUnitOfCurrentPlayerInWalkingRange(int destRow, int destColumn);
+
 signals:
 };
 

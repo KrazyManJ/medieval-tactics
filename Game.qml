@@ -5,7 +5,7 @@ Item {
     signal quitButtonClicked()
 
     function init() {
-        map.init()
+        map.redraw()
     }
 
     Button {
@@ -74,6 +74,11 @@ Item {
             left: parent.left
             bottom: parent.bottom
             right: parent.right
+        }
+
+        onMoveButtonClicked() {
+            map.state = "move"
+            map.redraw()
         }
     }
 }
