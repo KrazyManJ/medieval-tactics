@@ -7,17 +7,17 @@ Rectangle {
 
     signal moveButtonClicked()
 
-    function selectUnit(row, column) {
-        const foundUnit = gameContext.getUnitByPos(row,column)
+    function selectUnit() {
+        const foundUnit = gameContext.getSelectedUnitOfCurrentPlayer()
         if (!foundUnit) {
             noUnitSelected.visible = true;
             selectedUnit.visible = false;
+            return;
         }
-
         noUnitSelected.visible = false;
         selectedUnit.visible = true;
-        unitPreview.img = foundUnit.unit.name.toLowerCase();
-        unitLabel.text = foundUnit.unit.name
+        unitPreview.img = foundUnit.name.toLowerCase();
+        unitLabel.text = foundUnit.name
     }
 
     Item {

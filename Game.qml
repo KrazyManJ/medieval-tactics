@@ -20,6 +20,28 @@ Item {
         }
     }
 
+    Text {
+        id: currentPlayer
+        property string playerColor: gameContext.getCurrentPlayerOnTurn().color
+        text: currentPlayer.playerColor;
+        color: currentPlayer.playerColor;
+        anchors {
+            top: parent.top
+            right: parent.right
+        }
+        font.pixelSize: 20
+    }
+
+    Text {
+        id: currentPlayerLabel
+        text: `On turn: `
+        anchors {
+            top: parent.top
+            right: currentPlayer.left
+        }
+        font.pixelSize: 20
+    }
+
     Item {
         id: mapContainer
 

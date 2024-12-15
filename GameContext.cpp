@@ -40,11 +40,11 @@ Q_INVOKABLE QVariant GameContext::getCurrentPlayerOnTurn() {
     return Game::getInstance()->getPlayerOnTurn()->serialize();
 }
 
-Q_INVOKABLE void selectUnitOfCurrentPlayer(int row, int column) {
+Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
     return Game::getInstance()->getPlayerOnTurn()->selectUnit(row,column);
 }
 
-Q_INVOKABLE QVariant getSelectedUnitOfCurrentPlayer() {
+Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
     QVariant ret = QVariant::fromValue(nullptr);
     Unit* unit = Game::getInstance()->getPlayerOnTurn()->getSelectedUnit();
     if (unit != nullptr) ret.setValue(unit->serialize());
