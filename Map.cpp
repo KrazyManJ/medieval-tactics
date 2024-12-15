@@ -17,8 +17,8 @@ int Map::getHeight() {
 }
 
 MapObject* Map::getObjectAt(int row, int column) {
-    if (row < 0 || row > rows || column < 0 || column > columns) {
-        return nullptr;
+    if(isInRange(row,column)) {
+        throw std::out_of_range("Unit is out of map");
     }
     return mapMatrix.at(row).at(column);
 }
