@@ -3,7 +3,7 @@
 Map::Map(){
     for (int r = 0; r < rows; r++) {
         for (int c = 0; c < columns; c++) {
-            mapMatrix.at(r).at(c) = new MapObject(true, GroundType::Grass);
+            mapMatrix.at(r).at(c) = new MapObject(false, GroundType::Grass);
         }
     }
 }
