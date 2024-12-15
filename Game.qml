@@ -4,8 +4,9 @@ Item {
     id: game
     signal quitButtonClicked()
 
-    function init() {
+    function redraw() {
         map.redraw()
+        currentPlayer.updateText()
     }
 
     Button {
@@ -35,8 +36,9 @@ Item {
         anchors {
             top: parent.top
             right: parent.right
+            rightMargin: 10
         }
-        font.pixelSize: 20
+        font.pixelSize: 30
     }
 
     Text {
@@ -46,7 +48,7 @@ Item {
             top: parent.top
             right: currentPlayer.left
         }
-        font.pixelSize: 20
+        font.pixelSize: 30
     }
 
     Item {
@@ -72,8 +74,7 @@ Item {
             onUnitSelected: {
                 unitControls.selectUnit()
                 map.state = "display"
-                map.redraw()
-                currentPlayer.updateText()
+                game.redraw()
             }
         }
     }
@@ -88,8 +89,7 @@ Item {
 
         onMoveButtonClicked: {
             map.state = map.state == "display" ? "move" : "display"
-            map.redraw()
-            currentPlayer.updateText()
+            game.redraw()
         }
     }
 }

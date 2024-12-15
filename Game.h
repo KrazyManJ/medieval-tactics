@@ -9,7 +9,7 @@ class Game
 {
 private:
     inline static Game* instance = nullptr;
-    static constexpr int TURNS_PER_ROUND = 1;
+    static constexpr int TURNS_PER_ROUND = 2;
 
     Map* map;
     Player* firstPlayer;
