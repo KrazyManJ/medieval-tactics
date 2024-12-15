@@ -46,8 +46,9 @@ Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
 
 Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
     QVariant ret = QVariant::fromValue(nullptr);
-    Unit* unit = Game::getInstance()->getPlayerOnTurn()->getSelectedUnit();
-    if (unit != nullptr) ret.setValue(unit->serialize());
+    Player* player = Game::getInstance()->getPlayerOnTurn();
+    if (player->hasSelectedUnit())
+        ret.setValue(player->getSelectedUnit()->serialize());
     return ret;
 }
 
