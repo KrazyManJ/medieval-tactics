@@ -76,7 +76,7 @@ Item {
             right: parent.right
         }
 
-        onMoveButtonClicked() {
+        onMoveButtonClicked: {
             map.state = "move"
             map.redraw()
         }

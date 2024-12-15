@@ -26,6 +26,8 @@ public:
 
     Q_INVOKABLE bool isUnitOfCurrentPlayerInWalkingRange(int destRow, int destColumn);
 
+    Q_INVOKABLE void moveUnitOfCurrentPlayer(int destRow, int destColumn);
+
 signals:
 };
 

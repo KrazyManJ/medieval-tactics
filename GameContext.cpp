@@ -54,3 +54,7 @@ Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
 Q_INVOKABLE bool GameContext::isUnitOfCurrentPlayerInWalkingRange(int destRow, int destColumn) {
     return Game::getInstance()->getPlayerOnTurn()->getSelectedUnit()->isInWalkingRange(destRow,destColumn);
 }
+
+Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColumn) {
+    Game::getInstance()->moveUnitOfCurrentPlayer(destRow,destColumn);
+}
