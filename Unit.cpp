@@ -79,6 +79,7 @@ QVariantMap Unit::serialize()
     QVariantMap map;
     map["name"] = QString::fromUtf8(getName());
     map["position"] = getPosition().serialize();
+    map["walkingRange"] = getWalkingRange();
     return map;
 }
 
