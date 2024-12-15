@@ -39,6 +39,7 @@ public:
     virtual void useAbility(int row, int column)= 0;
     QVariantMap serialize() override;
     Position getPosition();
+    int getWalkingRange();
     ~Unit();
 
 };
