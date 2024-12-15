@@ -39,6 +39,7 @@ public:
     void useUnitAbilityOfCurrentPlayer(int row, int column);
 
     void markTurn();
+    int getRemainingTurns();
 
     ~Game();
 };

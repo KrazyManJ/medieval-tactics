@@ -74,6 +74,10 @@ void Game::markTurn() {
     }
 }
 
+int Game::getRemainingTurns() {
+    return TURNS_PER_ROUND - turns;
+}
+
 Game::~Game() {
     delete map;
     delete firstPlayer;

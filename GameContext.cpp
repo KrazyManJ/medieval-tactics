@@ -59,3 +59,7 @@ Q_INVOKABLE bool GameContext::isUnitOfCurrentPlayerInWalkingRange(int destRow, i
 Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColumn) {
     Game::getInstance()->moveUnitOfCurrentPlayer(destRow,destColumn);
 }
+
+Q_INVOKABLE int GameContext::getRemainingTurns() {
+    return Game::getInstance()->getRemainingTurns();
+}

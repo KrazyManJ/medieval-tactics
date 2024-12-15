@@ -28,6 +28,8 @@ public:
 
     Q_INVOKABLE void moveUnitOfCurrentPlayer(int destRow, int destColumn);
 
+    Q_INVOKABLE int getRemainingTurns();
+
 signals:
 };
 

@@ -7,6 +7,7 @@ Item {
     function redraw() {
         map.redraw()
         currentPlayer.updateText()
+        remainingTurns.updateText()
     }
 
     Button {
@@ -49,6 +50,21 @@ Item {
             right: currentPlayer.left
         }
         font.pixelSize: 30
+    }
+
+    Text {
+        id: remainingTurns
+
+        function updateText() {
+            remainingTurns.text = `Remaining turns: ${gameContext.getRemainingTurns()}`
+        }
+
+        anchors {
+            right: parent.right
+            top: currentPlayerLabel.bottom
+            rightMargin: 10
+        }
+        font.pixelSize: 15
     }
 
     Item {
