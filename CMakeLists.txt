@@ -22,6 +22,7 @@ qt_add_qml_module(app-medieval-tactics
         SOURCES Position.h
         SOURCES Unit.h Unit.cpp
         SOURCES GroundType.h
+        SOURCES UnitType.h
         SOURCES AttackUnit.h AttackUnit.cpp
         SOURCES BuildUnit.h BuildUnit.cpp
         SOURCES HealUnit.h HealUnit.cpp
