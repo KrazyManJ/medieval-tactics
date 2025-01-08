@@ -7,8 +7,8 @@
 
 
 class Map:public IQMLSerializable {
-    static constexpr int rows = 5;
-    static constexpr int columns = 5;
+    static constexpr int rows = 6;
+    static constexpr int columns = 12;
     std::array<std::array<MapObject*, columns>, rows> mapMatrix;
 
 public:

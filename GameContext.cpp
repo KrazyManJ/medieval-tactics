@@ -46,8 +46,9 @@ Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
 
 Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
     QVariant ret = QVariant::fromValue(nullptr);
-    Unit* unit = Game::getInstance()->getPlayerOnTurn()->getSelectedUnit();
-    if (unit != nullptr) ret.setValue(unit->serialize());
+    Player* player = Game::getInstance()->getPlayerOnTurn();
+    if (player->hasSelectedUnit())
+        ret.setValue(player->getSelectedUnit()->serialize());
     return ret;
 }
 
@@ -57,4 +58,8 @@ Q_INVOKABLE bool GameContext::isUnitOfCurrentPlayerInWalkingRange(int destRow, i
 
 Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColumn) {
     Game::getInstance()->moveUnitOfCurrentPlayer(destRow,destColumn);
+}
+
+Q_INVOKABLE int GameContext::getRemainingTurns() {
+    return Game::getInstance()->getRemainingTurns();
 }

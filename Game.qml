@@ -4,8 +4,10 @@ Item {
     id: game
     signal quitButtonClicked()
 
-    function init() {
+    function redraw() {
         map.redraw()
+        currentPlayer.updateText()
+        remainingTurns.updateText()
     }
 
     Button {
@@ -35,8 +37,9 @@ Item {
         anchors {
             top: parent.top
             right: parent.right
+            rightMargin: 10
         }
-        font.pixelSize: 20
+        font.pixelSize: 30
     }
 
     Text {
@@ -46,7 +49,22 @@ Item {
             top: parent.top
             right: currentPlayer.left
         }
-        font.pixelSize: 20
+        font.pixelSize: 30
+    }
+
+    Text {
+        id: remainingTurns
+
+        function updateText() {
+            remainingTurns.text = `Remaining turns: ${gameContext.getRemainingTurns()}`
+        }
+
+        anchors {
+            right: parent.right
+            top: currentPlayerLabel.bottom
+            rightMargin: 10
+        }
+        font.pixelSize: 15
     }
 
     Item {
@@ -72,8 +90,7 @@ Item {
             onUnitSelected: {
                 unitControls.selectUnit()
                 map.state = "display"
-                map.redraw()
-                currentPlayer.updateText()
+                game.redraw()
             }
         }
     }
@@ -87,9 +104,8 @@ Item {
         }
 
         onMoveButtonClicked: {
-            map.state = "move"
-            map.redraw()
-            currentPlayer.updateText()
+            map.state = map.state == "display" ? "move" : "display"
+            game.redraw()
         }
     }
 }

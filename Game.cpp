@@ -69,9 +69,14 @@ void Game::useUnitAbilityOfCurrentPlayer(int row, int column) {
 void Game::markTurn() {
     turns++;
     if (turns == TURNS_PER_ROUND) {
+        getPlayerOnTurn()->deselectUnit();
         firstPlayerOnTurn = !firstPlayerOnTurn;
         turns = 0;
     }
+}
+
+int Game::getRemainingTurns() {
+    return TURNS_PER_ROUND - turns;
 }
 
 Game::~Game() {

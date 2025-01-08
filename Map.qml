@@ -1,8 +1,8 @@
 import QtQuick
 Item{
     id: map
-    property int columns: 5
-    property int rows: 5
+    property int columns: -1
+    property int rows: -1
     property int fieldSize: 70
     width: columns * fieldSize + (columns-1) * grid.spacing
     height: rows * fieldSize + (rows-1) * grid.spacing
@@ -48,11 +48,17 @@ Item{
                     map.unitSelected()
                 }
                 required property int index
-                row: Math.floor(index / grid.rows)
-                column: (index % grid.rows)
+                row: Math.floor(index / grid.columns)
+                column: (index % grid.columns)
 
                 width: map.fieldSize
                 height: map.fieldSize
+
+                Text {
+                    anchors.fill: parent
+                    text: `${parent.row} ${parent.column}`
+
+                }
             }
         }
     }

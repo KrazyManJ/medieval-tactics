@@ -49,14 +49,12 @@ void Player::useSelectedUnit(int row, int column)  {
     if (!hasSelectedUnit())
         throw new std::logic_error("No unit has player selected");
     getSelectedUnit()->useAbility(row, column);
-    deselectUnit();
 }
 
 void Player::moveSelectedUnit(int row, int column)  {
     if (!hasSelectedUnit())
         throw new std::logic_error("No unit has player selected");
     getSelectedUnit()->move(row,column);
-    deselectUnit();
 }
 
 void Player::deselectUnit() {
