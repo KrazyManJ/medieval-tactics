@@ -97,6 +97,7 @@ Item {
 
     UnitControls {
         id: unitControls
+        visible: false
         anchors {
             left: parent.left
             bottom: parent.bottom
@@ -108,4 +109,21 @@ Item {
             game.redraw()
         }
     }
+
+    Shop {
+        id: shop
+        visible: true
+        anchors {
+            left: parent.left
+            bottom: parent.bottom
+            right: parent.right
+        }
+
+
+
+
+
+    }
+
+
 }

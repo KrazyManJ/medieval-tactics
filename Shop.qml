@@ -2,11 +2,12 @@ import QtQuick
 import QtQuick.Controls
 
 Rectangle {
-    id: unitControls
+    id: shop
     color: "#AAA"
     width: 400
     height: 150
-    spacing: 10
+
+    signal readyButtonClicked()
 
     Row {
         anchors.centerIn: parent
@@ -77,5 +78,17 @@ Rectangle {
                 }
             }
         }
+
+
+        // Ready Button
+        Button {
+            text: "Ready"
+            onClicked: {
+                shop.readyButtonClicked(); // Emit the signal
+                console.log("Ready button clicked in Shop!");
+            }
+        }
+
+
     }
 }
