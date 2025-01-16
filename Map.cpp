@@ -14,6 +14,8 @@ Map::Map(){
         "GGGGGGGGGGGGSWWWSGGGGGGGGG\n"
         "GGGGGGGGGGGGSWWWWSGGGGGGGG\n"
         "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
+        "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
+        "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
         ;
 
     std::map<char, std::function<MapObject*()>> charMappings = {

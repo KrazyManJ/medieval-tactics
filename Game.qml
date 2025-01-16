@@ -92,7 +92,7 @@ Item {
 
     UnitControls {
         id: unitControls
-        visible: false
+        visible: true
         anchors {
             left: parent.left
             bottom: parent.bottom
@@ -107,7 +107,7 @@ Item {
 
     Shop {
         id: shop
-        visible: true
+        visible: false
         anchors {
             left: parent.left
             bottom: parent.bottom

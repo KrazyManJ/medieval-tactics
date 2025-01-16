@@ -4,6 +4,7 @@ Rectangle {
     id: unitControls
     color: "#AAA"
     height: 150
+    focus: true
 
     signal moveButtonClicked()
 
@@ -91,5 +92,9 @@ Rectangle {
             }
         }
 
+    }
+
+    Keys.onPressed: (e) => {
+        if (e.key == Qt.Key_W && selectedUnit.visible) unitControls.moveButtonClicked()
     }
 }

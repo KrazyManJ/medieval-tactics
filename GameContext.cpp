@@ -52,8 +52,19 @@ Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
     return ret;
 }
 
-Q_INVOKABLE bool GameContext::isUnitOfCurrentPlayerInWalkingRange(int destRow, int destColumn) {
-    return Game::getInstance()->getPlayerOnTurn()->getSelectedUnit()->isInWalkingRange(destRow,destColumn);
+Q_INVOKABLE bool GameContext::canUnitOfCurrentPlayerWalkToDest(int destRow, int destColumn) {
+    auto* game = Game::getInstance();
+    Unit* playerUnit = game->getPlayerOnTurn()->getSelectedUnit();
+    std::vector<GroundType> groundTypes = playerUnit->getEnterableGroundType();
+
+    return
+        playerUnit->isInWalkingRange(destRow,destColumn)
+           && std::find(
+               groundTypes.begin(),
+               groundTypes.end(),
+               game->getMap()->getObjectAt(destRow,destColumn)->getType()
+            ) != groundTypes.end()
+    ;
 }
 
 Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColumn) {

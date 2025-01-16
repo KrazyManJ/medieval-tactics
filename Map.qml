@@ -26,7 +26,7 @@ Item{
                 child.state = "display"
                 child.redraw();
             }else if(map.state == "move"){
-                if(gameContext.isUnitOfCurrentPlayerInWalkingRange(child.row, child.column)){
+                if(gameContext.canUnitOfCurrentPlayerWalkToDest(child.row, child.column)){
                     child.state = "inRange"
                 }
                 else{
