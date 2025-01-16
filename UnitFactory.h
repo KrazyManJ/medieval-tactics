@@ -10,7 +10,7 @@
 class UnitFactory
 {
 public:
-    static std::unique_ptr<Unit> createUnit(const std::string& unitType,int row,int column);
+    static Unit* createUnit(const std::string& unitType,int row,int column);
 };
 
 #endif // UNITFACTORY_H
