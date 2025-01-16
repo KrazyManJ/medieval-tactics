@@ -82,11 +82,6 @@ Item {
 
             anchors.centerIn: parent
 
-            property var mapData: gameContext.getMapDetails()
-
-            rows: mapData.height
-            columns: mapData.width
-
             onUnitSelected: {
                 unitControls.selectUnit()
                 map.state = "display"

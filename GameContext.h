@@ -30,6 +30,8 @@ public:
 
     Q_INVOKABLE int getRemainingTurns();
 
+    Q_INVOKABLE QVariant getMapObjectAt(int row, int column);
+
 signals:
 };
 

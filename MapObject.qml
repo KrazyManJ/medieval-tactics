@@ -20,7 +20,17 @@ Rectangle{
 
     }
 
-    color: "green"
+    color: (()=> {
+        const type = gameContext.getMapObjectAt(row, column).type;
+        const MAP = {
+            water: "blue",
+            grass: "green"
+        }
+
+        return MAP[type];
+    })()
+
+
 
     border {
         color: "#000000"
