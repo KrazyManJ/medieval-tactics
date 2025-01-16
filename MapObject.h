@@ -1,9 +1,9 @@
 #ifndef MAPOBJECT_H
 #define MAPOBJECT_H
-#include <GroundType.h>
+#include "GroundType.h"
+#include "IQMLSerializable.h"
 
-
-class MapObject {
+class MapObject : public IQMLSerializable{
     bool m_solid;
     GroundType m_groundType;
 
@@ -13,7 +13,7 @@ public:
     bool isSolid();
     void setIsSolid(bool value);
     void setType(GroundType newType);
-    ~MapObject();
+    QVariantMap serialize() override;
 };
 
 

@@ -1,10 +1,35 @@
 #include "Map.h"
 
+#include <map>
+
 Map::Map(){
-    for (int r = 0; r < rows; r++) {
-        for (int c = 0; c < columns; c++) {
-            mapMatrix.at(r).at(c) = new MapObject(false, GroundType::Grass);
+    const std::string mapString =
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGWGGGWGGGGGGG\n"
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGWGGGWGGGGGGG\n"
+        "GGGGGGGGGWWWGGGGGGGG\n"
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGGGGGGGGGGGGG\n"
+        "GGGGGGGGGWWWGGGGGGGG\n"
+        ;
+
+    std::map<char, std::function<MapObject*()>> charMappings = {
+        {'G',[](){ return new MapObject(false, GroundType::Grass); } },
+        {'W',[](){ return new MapObject(false, GroundType::Water); } },
+    };
+
+    unsigned short row = 0, col = 0;
+    for (char c : mapString) {
+        if (c == '\n') {
+            row++;
+            col = 0;
+            continue;
         }
+        mapMatrix.at(row).at(col) = charMappings.at(c)();
+        col++;
     }
 }
 

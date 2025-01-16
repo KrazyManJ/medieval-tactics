@@ -63,3 +63,7 @@ Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColum
 Q_INVOKABLE int GameContext::getRemainingTurns() {
     return Game::getInstance()->getRemainingTurns();
 }
+
+Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
+    return Game::getInstance()->getMap()->getObjectAt(row,column)->serialize();
+}

@@ -1,11 +1,15 @@
 import QtQuick
 Item{
     id: map
-    property int columns: -1
-    property int rows: -1
-    property int fieldSize: 70
+
+    property var mapData: gameContext.getMapDetails()
+
+    property int columns: mapData.width
+    property int rows: mapData.height
+    property int fieldSize: 50
     width: columns * fieldSize + (columns-1) * grid.spacing
     height: rows * fieldSize + (rows-1) * grid.spacing
+
     state: "display"
 
     signal unitSelected()
@@ -57,6 +61,8 @@ Item{
                 Text {
                     anchors.fill: parent
                     text: `${parent.row} ${parent.column}`
+
+                    // text: `${gameContext.getMapObjectAt(parent.row,parent.column)}`
 
                 }
             }

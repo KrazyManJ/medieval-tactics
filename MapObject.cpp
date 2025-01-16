@@ -21,6 +21,20 @@ void MapObject::setType(GroundType newType) {
     m_groundType = newType;
 }
 
-MapObject::~MapObject(){
-
+QVariantMap MapObject::serialize(){
+    QVariantMap map;
+    QString type;
+    switch (m_groundType) {
+    case GroundType::Grass:
+        type = "grass";
+        break;
+    case GroundType::Water:
+        type = "water";
+        break;
+    default:
+        type = "grass";
+        break;
+    }
+    map["type"] = type;
+    return map;
 }
