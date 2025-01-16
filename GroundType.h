@@ -6,7 +6,8 @@ enum class GroundType {
     Water,
     Mud,
     Tree,
-    Hill
+    Hill,
+    Sand
 };
 
 

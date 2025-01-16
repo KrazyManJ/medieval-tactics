@@ -9,6 +9,8 @@ Window {
     minimumWidth: 720
     minimumHeight: 480
 
+    visibility: Window.FullScreen
+
     Menu {
         id: menu
         anchors.centerIn: parent

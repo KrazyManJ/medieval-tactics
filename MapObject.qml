@@ -24,7 +24,10 @@ Rectangle{
         const type = gameContext.getMapObjectAt(row, column).type;
         const MAP = {
             water: "blue",
-            grass: "green"
+            grass: "green",
+            sand: "yellow",
+            mud: "brown",
+            hill: "gray",
         }
 
         return MAP[type];

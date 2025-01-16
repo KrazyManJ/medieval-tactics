@@ -26,11 +26,15 @@ QVariantMap MapObject::serialize(){
     QString type;
     switch (m_groundType) {
     case GroundType::Grass:
-        type = "grass";
-        break;
+        type = "grass"; break;
     case GroundType::Water:
-        type = "water";
-        break;
+        type = "water"; break;
+    case GroundType::Hill:
+        type = "hill"; break;
+    case GroundType::Sand:
+        type = "sand"; break;
+    case GroundType::Mud:
+        type = "mud"; break;
     default:
         type = "grass";
         break;

@@ -57,14 +57,6 @@ Item{
 
                 width: map.fieldSize
                 height: map.fieldSize
-
-                Text {
-                    anchors.fill: parent
-                    text: `${parent.row} ${parent.column}`
-
-                    // text: `${gameContext.getMapObjectAt(parent.row,parent.column)}`
-
-                }
             }
         }
     }
