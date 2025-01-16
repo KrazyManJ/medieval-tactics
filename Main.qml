@@ -4,7 +4,7 @@ Window {
     width: 1280
     height: 720
     visible: true
-    title: qsTr("Medieval tactics")
+    title: qsTr("Medieval Tactics")
     color: "#EEE"
     minimumWidth: 720
     minimumHeight: 480

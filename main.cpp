@@ -3,6 +3,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QIcon>
 
 int main(int argc, char *argv[])
 {
@@ -17,12 +18,7 @@ int main(int argc, char *argv[])
                          if (!obj && url == objUrl)
                              QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
-    // QObject::connect(
-    //     &engine,
-    //     &QQmlApplicationEngine::objectCreationFailed,
-    //     &app,
-    //     []() { QCoreApplication::exit(-1); },
-    //     Qt::QueuedConnection);
+    app.setWindowIcon(QIcon(":/assets/menu-background.png"));
     engine.loadFromModule("medieval-tactics", "Main");
     return app.exec();
 }

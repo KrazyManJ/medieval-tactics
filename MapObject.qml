@@ -33,7 +33,11 @@ Rectangle{
         return MAP[type];
     })()
 
-
+    Image {
+        source: "qrc:/assets/"+ gameContext.getMapObjectAt(row, column).type +".png"
+        anchors.fill: parent
+        anchors.margins: 1
+    }
 
     border {
         color: "#000000"

@@ -4,5 +4,6 @@
         <file>assets/priest.png</file>
         <file>assets/warrior.png</file>
         <file>assets/menu-background.png</file>
+        <file>assets/grass.png</file>
     </qresource>
 </RCC>
