@@ -22,7 +22,7 @@ qt_add_qml_module(app-medieval-tactics
         SOURCES Position.h
         SOURCES Unit.h Unit.cpp
         SOURCES GroundType.h
-        SOURCES UnitType.h
+        SOURCES
         SOURCES AttackUnit.h AttackUnit.cpp
         SOURCES BuildUnit.h BuildUnit.cpp
         SOURCES HealUnit.h HealUnit.cpp
@@ -42,6 +42,7 @@ qt_add_qml_module(app-medieval-tactics
         QML_FILES Map.qml
         RESOURCES assets.qrc
         QML_FILES Game.qml
+        QML_FILES Shop.qml
 
 
 )
