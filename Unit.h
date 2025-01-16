@@ -30,6 +30,7 @@ public:
     float getHp();
     void setHp(float hp);
     int getDefense();
+    int getCost();
     std::string getName();
     std::string getDescription();
     void move(int row, int column);

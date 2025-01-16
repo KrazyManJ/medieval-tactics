@@ -92,3 +92,8 @@ int Unit::getWalkingRange()
 {
     return m_walkingRange;
 }
+
+
+int Unit::getCost() {
+    return m_cost;
+}
