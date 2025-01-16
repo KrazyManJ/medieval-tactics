@@ -2,12 +2,14 @@
 
 #include <AttackUnit.h>
 #include <Unit.h>
+#include "Shop.h"
 
 Game::Game() {
     if (Game::instance != nullptr)
         delete Game::instance;
     Game::instance = this;
     map = new Map();
+    shop = new Shop();
 
     firstPlayer = new Player(FIRST_PLAYER_COLOR, START_MONEY);
     firstPlayer->addUnit(new AttackUnit(1.0,1,2,1,1,{GroundType::Grass},{.row=2,.column=4},5,"Warrior","This is warrior, now he just moves"));

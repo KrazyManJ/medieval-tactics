@@ -4,6 +4,8 @@
 #include "Map.h"
 #include "Player.h"
 
+class Shop;
+
 
 class Game
 {
@@ -14,6 +16,7 @@ private:
     Map* map;
     Player* firstPlayer;
     Player* secondPlayer;
+    Shop* shop;
     bool firstPlayerOnTurn;
     int turns;
 public:
