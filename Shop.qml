@@ -6,6 +6,7 @@ Rectangle {
     color: "#AAA"
     width: 400
     height: 150
+    signal buyingUnitSelected()
 
     signal readyButtonClicked()
 
@@ -34,6 +35,7 @@ Rectangle {
                 onClicked: {
                     console.log("Image 1 clicked!")
                     gameContext.selectButyingUnitInShop(knightRectangle.unitName)
+                    shop.buyingUnitSelected()
                 }
             }
         }
