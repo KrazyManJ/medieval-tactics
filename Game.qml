@@ -113,10 +113,13 @@ Item {
             bottom: parent.bottom
             right: parent.right
         }
-        onBuyingUnitSelected: {
 
+        onBuyingUnitSelected: {
+            map.state = map.state == "display" ? "move" : "display"
+            map.enterPlacementMode();
         }
     }
+
 
 
 }

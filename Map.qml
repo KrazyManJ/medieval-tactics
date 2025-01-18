@@ -14,6 +14,27 @@ Item{
 
     signal unitSelected()
 
+    function enterPlacementMode() {
+        for (let i = 0; i < grid.children.length; i++) {
+            let child = grid.children[i];
+
+            if (!child.redraw) {
+                continue;
+            }
+
+            console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
+
+            if (!child.unit.visible) {
+                child.state = "Place";
+            } else if (child.unit.visible) {
+                child.state = "display";
+            }
+
+            child.redraw();
+        }
+    }
+
+
 
     function redraw(){
         for (let i = 0; i < grid.children.length; i++) {
@@ -30,7 +51,7 @@ Item{
                     child.state = "inRange"
                 }
                 else{
-                    child.state = "move"
+                    child.state = "display"
                 }
                 child.redraw();
             }

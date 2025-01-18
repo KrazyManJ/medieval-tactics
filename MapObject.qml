@@ -2,6 +2,7 @@ import QtQuick
 
 Rectangle{
     id: mapObject
+    property alias unit: unit
     property int row: -1
     property int column: -1
     signal unitSelected()
@@ -56,6 +57,14 @@ Rectangle{
 
         State {
             name: "inRange"
+            PropertyChanges {
+                target: mapObject
+                border.color: "red"
+            }
+        },
+
+        State {
+            name: "Place"
             PropertyChanges {
                 target: mapObject
                 border.color: "red"
