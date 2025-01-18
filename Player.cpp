@@ -29,10 +29,6 @@ void Player::selectUnit(int row, int column) {
     selectedUnit = unitIt;
 }
 
-void Player::selectBuyingUnit(std::string unitName){
-    selectedBuyingUnit = unitName;
-}
-
 Unit* Player::getSelectedUnit() const {
     return *selectedUnit;
 }

@@ -20,6 +20,10 @@ void Shop::buyUnitForCurrentPlayer(std::string unitID, int row, int column) {
     }
 }
 
+void Shop::selectBuyingUnit(std::string unitName){
+    selectedBuyingUnit = unitName;
+}
+
 
 bool Shop::isReady() {
     if(isFirstPlayerReady == true && isSecondPlayerReady == true) {
