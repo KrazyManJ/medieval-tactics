@@ -7,10 +7,10 @@ class Shop {
 private:
     bool isFirstPlayerReady;
     bool isSecondPlayerReady;
-    std::string selectedBuyingUnit;
+    std::string selectedBuyingUnit = "Knight";
 public:
     Shop();
-    void buyUnitForCurrentPlayer(std::string unitID, int row, int column);
+    void buyUnitForCurrentPlayer(int row, int column);
     void selectBuyingUnit(std::string unitName);
     bool isReady();
     void markReady();

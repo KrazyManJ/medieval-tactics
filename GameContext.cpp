@@ -1,4 +1,5 @@
 #include "GameContext.h"
+#include "Shop.h"
 
 
 GameContext::GameContext(QObject *parent)
@@ -43,6 +44,11 @@ Q_INVOKABLE QVariant GameContext::getCurrentPlayerOnTurn() {
 Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
     return Game::getInstance()->getPlayerOnTurn()->selectUnit(row,column);
 }
+
+Q_INVOKABLE void GameContext::selectButyingUnitInShop(const QString& unitName) {
+    Game::getInstance()->getShop()->selectBuyingUnit(unitName.toStdString());
+}
+
 
 Q_INVOKABLE QVariant GameContext::getSelectedUnitOfCurrentPlayer() {
     QVariant ret = QVariant::fromValue(nullptr);

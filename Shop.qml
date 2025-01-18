@@ -15,6 +15,8 @@ Rectangle {
 
         // First clickable image
         Rectangle {
+            id: knightRectangle
+            property string unitName: "Knight" //which string is passed to gamecontext
             width: 100
             height: 100
             color: "#FFF"
@@ -31,12 +33,15 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Image 1 clicked!")
+                    gameContext.selectButyingUnitInShop(knightRectangle.unitName)
                 }
             }
         }
 
         // Second clickable image
         Rectangle {
+            id: priestRectangle
+            property string unitName: "Priest"
             width: 100
             height: 100
             color: "#FFF"
@@ -53,12 +58,15 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Image 2 clicked!")
+                    gameContext.selectButyingUnitInShop(priestRectangle.unitName)
                 }
             }
         }
 
         // Third clickable image
         Rectangle {
+            id: druidRectangle
+            property string unitName: "Druid"
             width: 100
             height: 100
             color: "#FFF"
@@ -75,6 +83,7 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Image 3 clicked!")
+                    gameContext.selectButyingUnitInShop(druidRectangle.unitName)
                 }
             }
         }

@@ -35,6 +35,7 @@ Player* Game::getFirstPlayer() { return firstPlayer; }
 
 Player* Game::getSecondPlayer() { return secondPlayer; }
 
+Shop* Game::getShop() { return shop; }
 
 bool Game::isFirstPlayerOnTurn() { return firstPlayerOnTurn; }
 

@@ -5,12 +5,12 @@ Shop::Shop() {
     isSecondPlayerReady = false;
 }
 
-void Shop::buyUnitForCurrentPlayer(std::string unitID, int row, int column) {
+void Shop::buyUnitForCurrentPlayer(int row, int column) {
     Game* game = Game::getInstance();
 
 
 
-    Unit* unit = UnitFactory::createUnit(unitID, row, column);
+    Unit* unit = UnitFactory::createUnit(selectedBuyingUnit, row, column);
     if(isFirstPlayerReady == false) {
         Player* player = game->getFirstPlayer();
         player->addUnit(unit);

@@ -31,6 +31,7 @@ public:
     Map* getMap();
     Player* getFirstPlayer();
     Player* getSecondPlayer();
+    Shop* getShop();
 
     bool isFirstPlayerOnTurn();
     Player* getPlayerOnTurn();

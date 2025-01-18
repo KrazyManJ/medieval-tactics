@@ -22,6 +22,8 @@ public:
 
     Q_INVOKABLE void selectUnitOfCurrentPlayer(int row, int column);
 
+    Q_INVOKABLE void selectButyingUnitInShop(const QString& unitName);
+
     Q_INVOKABLE QVariant getSelectedUnitOfCurrentPlayer();
 
     Q_INVOKABLE bool canUnitOfCurrentPlayerWalkToDest(int destRow, int destColumn);
