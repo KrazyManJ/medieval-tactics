@@ -11,6 +11,7 @@ class Player : public IQMLSerializable
 private:
     std::vector<Unit*> units;
     std::vector<Unit*>::iterator selectedUnit;
+    std::string selectedBuyingUnit;
     std::string color;
     int money;
 public:
@@ -24,6 +25,8 @@ public:
     bool hasSelectedUnit() const;
     void addUnit(Unit* unit);
     void selectUnit(int row, int column);
+    void selectBuyingUnit(std::string unitName);
+
     void deselectUnit();
 
     void useSelectedUnit(int row, int column);
