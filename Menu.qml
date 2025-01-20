@@ -2,7 +2,8 @@ import QtQuick
 
 Item {
     id: mainMenu
-    signal gameCreated()
+    signal createGameButtonClicked()
+    signal quitButtonClicked()
 
     Image {
         anchors.centerIn: parent
@@ -31,22 +32,21 @@ Item {
 
             Button {
                 title: "Start game"
+                anchors.horizontalCenter: parent.horizontalCenter
+
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: {
-                        gameContext.createNewGame()
-                        mainMenu.gameCreated()
-                    }
+                    onClicked: mainMenu.createGameButtonClicked()
                 }
             }
 
             Button {
                 title: "Quit"
+                anchors.horizontalCenter: parent.horizontalCenter
+
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: {
-                        Qt.quit()
-                    }
+                    onClicked: mainMenu.quitButtonClicked()
                 }
             }
         }

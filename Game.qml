@@ -5,6 +5,7 @@ Item {
     signal quitButtonClicked()
 
     function redraw() {
+        unitControls.updateSelectedUnitState()
         map.redraw()
         currentPlayer.updateText()
         remainingTurns.updateText()
@@ -31,7 +32,11 @@ Item {
             currentPlayer.text = color;
         }
 
-        property string playerColor: gameContext.getCurrentPlayerOnTurn().color
+        property string playerColor: (() => {
+            if (!gameContext) return null;
+            return gameContext.getCurrentPlayerOnTurn().color
+        })()
+
         text: currentPlayer.playerColor;
         color: currentPlayer.playerColor;
         anchors {
@@ -83,7 +88,7 @@ Item {
             anchors.centerIn: parent
 
             onUnitSelected: {
-                unitControls.selectUnit()
+                unitControls.updateSelectedUnitState()
                 map.state = "display"
                 game.redraw()
             }
@@ -92,7 +97,7 @@ Item {
 
     UnitControls {
         id: unitControls
-        visible: false
+        visible: true
         anchors {
             left: parent.left
             bottom: parent.bottom
@@ -100,14 +105,14 @@ Item {
         }
 
         onMoveButtonClicked: {
-            map.state = map.state == "display" ? "move" : "display"
+            map.state = map.state === "display" ? "move" : "display"
             game.redraw()
         }
     }
 
     Shop {
         id: shop
-        visible: true
+        visible: false
         anchors {
             left: parent.left
             bottom: parent.bottom
@@ -119,7 +124,4 @@ Item {
             map.enterPlacementMode();
         }
     }
-
-
-
 }

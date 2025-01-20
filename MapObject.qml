@@ -24,6 +24,7 @@ Rectangle{
     }
 
     color: (()=> {
+        if (!gameContext) return null;
         const type = gameContext.getMapObjectAt(row, column).type;
         const MAP = {
             water: "blue",
@@ -35,11 +36,16 @@ Rectangle{
         return MAP[type];
     })()
 
-    Image {
-        source: "qrc:/assets/"+ gameContext.getMapObjectAt(row, column).type +".png"
-        anchors.fill: parent
-        anchors.margins: 1
-    }
+    // Image {
+    //     source: (() => {
+    //         if (!gameContext)
+    //                  return "qrc:/assets/grass.png";
+    //         const type = gameContext.getMapObjectAt(row, column).type
+    //         return "qrc:/assets/"+ type +".png"
+    //     })()
+    //     anchors.fill: parent
+    //     anchors.margins: 1
+    // }
 
     border {
         color: "#000000"
@@ -110,6 +116,4 @@ Rectangle{
             }
         }
     }
-
-
 }

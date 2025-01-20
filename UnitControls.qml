@@ -8,9 +8,9 @@ Rectangle {
 
     signal moveButtonClicked()
 
-    function selectUnit() {
+    function updateSelectedUnitState() {
         const foundUnit = gameContext.getSelectedUnitOfCurrentPlayer()
-        if (!foundUnit) {
+        if (!foundUnit){
             noUnitSelected.visible = true;
             selectedUnit.visible = false;
             return;
