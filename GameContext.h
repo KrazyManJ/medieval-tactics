@@ -34,6 +34,8 @@ public:
 
     Q_INVOKABLE QVariant getMapObjectAt(int row, int column);
 
+    Q_INVOKABLE void buyUnitForPlayer(int row, int column);
+
 signals:
 };
 
