@@ -3,7 +3,6 @@ Item{
     id: map
 
     property var mapData: gameContext.getMapDetails()
-
     property int columns: mapData.width
     property int rows: mapData.height
     property int fieldSize: 50
@@ -15,6 +14,7 @@ Item{
     signal unitSelected()
 
     function enterPlacementMode() {
+
         for (let i = 0; i < grid.children.length; i++) {
             let child = grid.children[i];
 
@@ -23,14 +23,29 @@ Item{
             }
 
             console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
+            if(gameContext.getCurrentPlayerOnTurn().color === "blue") {
+                if(child.column < columns/2) {
+                    if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
+                        child.state = "Place";
+                    } else if (child.unit.visible) {
+                        child.state = "display";
+                    }
 
-            if (!child.unit.visible) {
-                child.state = "Place";
-            } else if (child.unit.visible) {
-                child.state = "display";
+                    child.redraw();
+                }
+            } else {
+                if(child.column > columns/2) {
+                    if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
+                        child.state = "Place";
+                    } else if (child.unit.visible) {
+                        child.state = "display";
+                    }
+
+                    child.redraw();
+                }
             }
 
-            child.redraw();
+
         }
     }
 

@@ -8,6 +8,7 @@ Rectangle{
     signal unitSelected()
     state: "display"
 
+
     function redraw(){
         const foundUnit = gameContext.getUnitByPos(mapObject.row,mapObject.column)
         if(foundUnit != null){
@@ -30,7 +31,6 @@ Rectangle{
             mud: "brown",
             hill: "gray",
         }
-
         return MAP[type];
     })()
 
