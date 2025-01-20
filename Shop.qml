@@ -61,6 +61,7 @@ Rectangle {
                 onClicked: {
                     console.log("Image 2 clicked!")
                     gameContext.selectButyingUnitInShop(priestRectangle.unitName)
+                    shop.buyingUnitSelected()
                 }
             }
         }
@@ -86,6 +87,7 @@ Rectangle {
                 onClicked: {
                     console.log("Image 3 clicked!")
                     gameContext.selectButyingUnitInShop(druidRectangle.unitName)
+                    shop.buyingUnitSelected()
                 }
             }
         }

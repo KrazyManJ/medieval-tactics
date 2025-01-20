@@ -94,7 +94,7 @@ Item{
                 }
 
                 onUnitBought: {
-                    map.state = "Display"
+                    map.state = "display"
                     map.redraw()
                 }
                 required property int index
