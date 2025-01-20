@@ -90,6 +90,6 @@ Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
     Game::getInstance()->getPlayerOnTurn()->getNumberOfUnits();
 }
 
-Q_INVOKABLE bool isShopReady(){
+Q_INVOKABLE bool GameContext::isShopReady(){
     return Game::getInstance()->getShop()->isReady();
 }
