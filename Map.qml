@@ -16,6 +16,7 @@ Item{
     state: "display"
 
     signal unitSelected()
+    signal unitBought()
 
     function enterPlacementMode() {
 
@@ -26,7 +27,7 @@ Item{
                 continue;
             }
 
-            console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
+            //console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
             if(gameContext.getCurrentPlayerOnTurn().color === "blue") {
                 if(child.column < columns/2) {
                     if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
@@ -93,6 +94,7 @@ Item{
                 }
 
                 onUnitBought: {
+                    map.state = "Display"
                     map.redraw()
                 }
                 required property int index

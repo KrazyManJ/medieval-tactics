@@ -29,6 +29,7 @@ public:
 
     void useSelectedUnit(int row, int column);
     void moveSelectedUnit(int row, int column);
+    void getNumberOfUnits();
 
     QVariantMap serialize() override;
 

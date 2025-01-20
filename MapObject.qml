@@ -88,7 +88,7 @@ Rectangle{
                 mapObject.unitSelected()
             }
 
-            if(mabObject.state === "Place") {
+            if(mapObject.state === "Place") {
                 gameContext.buyUnitForPlayer(row,column)
                 mapObject.unitBought()
             }

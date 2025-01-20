@@ -64,6 +64,10 @@ void Player::deselectUnit() {
 Player::~Player() {
     units.clear();
 }
+void Player::getNumberOfUnits() {
+    std::cout << units.size() << std::endl;
+}
+
 
 QVariantMap Player::serialize() {
     QVariantMap map;
