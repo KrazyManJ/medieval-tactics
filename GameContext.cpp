@@ -84,3 +84,7 @@ Q_INVOKABLE int GameContext::getRemainingTurns() {
 Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
     return Game::getInstance()->getMap()->getObjectAt(row,column)->serialize();
 }
+
+Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
+    Game::getInstance()->getShop()->buyUnitForCurrentPlayer(row,column);
+}

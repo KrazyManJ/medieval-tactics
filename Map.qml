@@ -87,6 +87,10 @@ Item{
                 onUnitSelected:{
                     map.unitSelected()
                 }
+
+                onUnitBought: {
+                    map.redraw()
+                }
                 required property int index
                 row: Math.floor(index / grid.columns)
                 column: (index % grid.columns)

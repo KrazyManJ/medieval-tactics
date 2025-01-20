@@ -6,6 +6,7 @@ Rectangle{
     property int row: -1
     property int column: -1
     signal unitSelected()
+    signal unitBought()
     state: "display"
 
 
@@ -80,6 +81,12 @@ Rectangle{
                 gameContext.moveUnitOfCurrentPlayer(mapObject.row, mapObject.column)
                 mapObject.unitSelected()
             }
+
+            if(mabObject.state === "Place") {
+                gameContext.buyUnitForPlayer(row,column)
+                mapObject.unitBought()
+            }
+
         }
 
     }
