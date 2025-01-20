@@ -7,6 +7,8 @@ Window {
     title: qsTr("Medieval Tactics")
     minimumWidth: 720
     minimumHeight: 480
+    color: "#f6ebd5"
+
 
     visibility: Window.FullScreen
 
@@ -26,17 +28,10 @@ Window {
         game.redraw()
     }
 
-    FontLoader {
-        source: "qrc:/assets/fonts/InknutAntiqua-Bold.ttf"
-    }
-    FontLoader {
-        source: "qrc:/assets/fonts/Macondo-Regular.ttf"
-    }
-
 
     Menu {
         id: menu
-        anchors.centerIn: parent
+        anchors.fill: parent
 
         onCreateGameButtonClicked: app.createNewGame()
         onQuitButtonClicked: Qt.quit()
