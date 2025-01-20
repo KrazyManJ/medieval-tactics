@@ -28,7 +28,7 @@ Item{
             }
 
             //console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
-            if(gameContext.getCurrentPlayerOnTurn().color === "blue") {
+            if(gameContext.getCurrentPlayerOnTurn().color === "orange") {
                 if(child.column < columns/2) {
                     if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
                         child.state = "Place";

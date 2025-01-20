@@ -37,6 +37,8 @@ public:
     Q_INVOKABLE void buyUnitForPlayer(int row, int column);
 
     Q_INVOKABLE bool isShopReady();
+
+    Q_INVOKABLE void playerReady();
 signals:
 };
 

@@ -7,6 +7,10 @@ Item {
     function redraw() {
         unitControls.updateSelectedUnitState()
         map.redraw()
+        if(gameContext.isShopReady()) {
+            unitControls.visible = true
+            shop.visible = false
+        }
         currentPlayer.updateText()
         remainingTurns.updateText()
     }
@@ -60,8 +64,12 @@ Item {
     Text {
         id: remainingTurns
 
+
         function updateText() {
-            remainingTurns.text = `Remaining turns: ${gameContext.getRemainingTurns()}`
+            if(gameContext.isShopReady()) {
+                remainingTurns.text = `Remaining turns: ${gameContext.getRemainingTurns()}`
+            }
+
         }
 
         anchors {
@@ -124,6 +132,9 @@ Item {
             map.enterPlacementMode();
         }
 
+        onReadyButtonClicked: {
+            game.redraw()
+        }
 
     }
 }

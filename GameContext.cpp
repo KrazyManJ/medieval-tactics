@@ -93,3 +93,7 @@ Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
 Q_INVOKABLE bool GameContext::isShopReady(){
     return Game::getInstance()->getShop()->isReady();
 }
+
+Q_INVOKABLE void GameContext::playerReady() {
+    Game::getInstance()->getShop()->markReady();
+}

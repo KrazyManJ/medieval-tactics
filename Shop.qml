@@ -97,8 +97,8 @@ Rectangle {
         Button {
             text: "Ready"
             onClicked: {
-                shop.readyButtonClicked(); // Emit the signal
-                console.log("Ready button clicked in Shop!");
+                gameContext.playerReady()
+                shop.readyButtonClicked();
             }
         }
 
