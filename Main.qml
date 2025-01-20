@@ -1,25 +1,45 @@
 import QtQuick
 
 Window {
+    id: app
     width: 1280
     height: 720
-    visible: true
     title: qsTr("Medieval Tactics")
-    color: "#EEE"
     minimumWidth: 720
     minimumHeight: 480
 
     visibility: Window.FullScreen
 
+    function showGame() {
+        game.visible = true;
+        menu.visible = false;
+    }
+
+    function showMenu() {
+        game.visible = false;
+        menu.visible = true;
+    }
+
+    function createNewGame() {
+        gameContext.createNewGame()
+        app.showGame()
+        game.redraw()
+    }
+
+    FontLoader {
+        source: "qrc:/assets/fonts/InknutAntiqua-Bold.ttf"
+    }
+    FontLoader {
+        source: "qrc:/assets/fonts/Macondo-Regular.ttf"
+    }
+
+
     Menu {
         id: menu
         anchors.centerIn: parent
 
-        onGameCreated: {
-            menu.visible = false
-            game.visible = true
-            game.redraw()
-        }
+        onCreateGameButtonClicked: app.createNewGame()
+        onQuitButtonClicked: Qt.quit()
     }
 
     Game {
@@ -27,9 +47,6 @@ Window {
         anchors.fill: parent
         visible: false
 
-        onQuitButtonClicked: {
-            menu.visible = true
-            game.visible = false
-        }
+        onQuitButtonClicked: app.showMenu()
     }
 }

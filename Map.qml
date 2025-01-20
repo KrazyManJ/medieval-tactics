@@ -2,7 +2,11 @@ import QtQuick
 Item{
     id: map
 
-    property var mapData: gameContext.getMapDetails()
+    property var mapData: (() => {
+        if (!gameContext) return {width: 0, height: 0};
+                               return gameContext.getMapDetails()
+    })()
+
     property int columns: mapData.width
     property int rows: mapData.height
     property int fieldSize: 50
