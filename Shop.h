@@ -5,8 +5,8 @@
 
 class Shop {
 private:
-    bool isFirstPlayerReady;
-    bool isSecondPlayerReady;
+    bool m_isFirstPlayerReady;
+    bool m_isSecondPlayerReady;
     std::string selectedBuyingUnit = "Knight";
 public:
     Shop();
@@ -14,6 +14,7 @@ public:
     void selectBuyingUnit(std::string unitName);
     bool isReady();
     void markReady();
+    bool isFirstPlayerReady();
     ~Shop();
 };
 

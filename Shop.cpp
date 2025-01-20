@@ -1,8 +1,8 @@
 #include "Shop.h"
 
 Shop::Shop() {
-    isFirstPlayerReady = false;
-    isSecondPlayerReady = false;
+    m_isFirstPlayerReady = false;
+    m_isSecondPlayerReady = false;
 }
 
 void Shop::buyUnitForCurrentPlayer(int row, int column) {
@@ -11,7 +11,7 @@ void Shop::buyUnitForCurrentPlayer(int row, int column) {
 
 
     Unit* unit = UnitFactory::createUnit(selectedBuyingUnit, row, column);
-    if(isFirstPlayerReady == false) {
+    if(m_isFirstPlayerReady == false) {
         Player* player = game->getFirstPlayer();
         player->addUnit(unit);
     } else {
@@ -26,7 +26,7 @@ void Shop::selectBuyingUnit(std::string unitName){
 
 
 bool Shop::isReady() {
-    if(isFirstPlayerReady == true && isSecondPlayerReady == true) {
+    if(m_isFirstPlayerReady == true && m_isSecondPlayerReady == true) {
         return true;
     } else {
         return false;
@@ -34,10 +34,13 @@ bool Shop::isReady() {
 }
 
 void Shop::markReady() {
-    if(isFirstPlayerReady == false) {
-        isFirstPlayerReady = true;
+    if(m_isFirstPlayerReady == false) {
+        m_isFirstPlayerReady = true;
     } else {
-        isSecondPlayerReady = true;
+        m_isSecondPlayerReady = true;
     }
 }
 
+bool Shop::isFirstPlayerReady() {
+    return m_isFirstPlayerReady;
+}

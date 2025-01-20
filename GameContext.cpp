@@ -42,7 +42,7 @@ Q_INVOKABLE QVariant GameContext::getCurrentPlayerOnTurn() {
 }
 
 Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
-    return Game::getInstance()->getPlayerOnTurn()->selectUnit(row,column);
+    Game::getInstance()->getPlayerOnTurn()->selectUnit(row,column);
 }
 
 Q_INVOKABLE void GameContext::selectButyingUnitInShop(const QString& unitName) {
@@ -78,7 +78,7 @@ Q_INVOKABLE void GameContext::moveUnitOfCurrentPlayer(int destRow, int destColum
 }
 
 Q_INVOKABLE int GameContext::getRemainingTurns() {
-    return Game::getInstance()->getRemainingTurns();
+    return Game::getInstance()->getRemainingRoundTurns();
 }
 
 Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
@@ -88,4 +88,8 @@ Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
 Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
     Game::getInstance()->getShop()->buyUnitForCurrentPlayer(row,column);
     Game::getInstance()->getPlayerOnTurn()->getNumberOfUnits();
+}
+
+Q_INVOKABLE bool isShopReady(){
+    return Game::getInstance()->getShop()->isReady();
 }

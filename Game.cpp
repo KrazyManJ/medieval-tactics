@@ -40,7 +40,7 @@ Shop* Game::getShop() { return shop; }
 bool Game::isFirstPlayerOnTurn() { return firstPlayerOnTurn; }
 
 Player* Game::getPlayerOnTurn() {
-    return (isFirstPlayerOnTurn()) ? firstPlayer : secondPlayer;
+    return (!shop->isReady() ? shop->isFirstPlayerReady() :  isFirstPlayerOnTurn()) ? firstPlayer : secondPlayer;
 }
 
 Player* Game::getOponentPlayerOfPlayerOnTurn() {
@@ -56,6 +56,8 @@ void Game::moveUnitOfCurrentPlayer(int row, int column) {
         throw std::logic_error("Action out of map");
     if (map->getObjectAt(row,column)->isSolid())
         throw std::logic_error("Cannot move into solid object");
+    if (!shop->isReady())
+        throw std::logic_error("Cannot move unit in buying phase");
     getPlayerOnTurn()->moveSelectedUnit(row,column);
     markTurn();
 }
@@ -65,11 +67,17 @@ void Game::useUnitAbilityOfCurrentPlayer(int row, int column) {
         throw std::logic_error("Action out of map");
     if (map->getObjectAt(row,column)->isSolid())
         throw std::logic_error("Cannot move into solid object");
+    if (!shop->isReady())
+        throw std::logic_error("Cannot use unit in buying phase");
     getPlayerOnTurn()->useSelectedUnit(row, column);
     markTurn();
 }
 
 void Game::markTurn() {
+    if (!shop->isReady()) {
+        shop->markReady();
+        return;
+    }
     turns++;
     if (turns == TURNS_PER_ROUND) {
         getPlayerOnTurn()->deselectUnit();
@@ -78,7 +86,9 @@ void Game::markTurn() {
     }
 }
 
-int Game::getRemainingTurns() {
+int Game::getRemainingRoundTurns() {
+    if (!shop->isReady())
+        throw std::logic_error("Cannot get remaining rounds when shop is not ready!");
     return TURNS_PER_ROUND - turns;
 }
 

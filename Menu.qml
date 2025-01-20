@@ -37,6 +37,7 @@ Item {
 
         Column {
             anchors.horizontalCenter: parent.horizontalCenter
+            spacing: -40
 
             Image {
                 height: 450
