@@ -28,7 +28,6 @@ Window {
         game.redraw()
     }
 
-
     Menu {
         id: menu
         anchors.fill: parent

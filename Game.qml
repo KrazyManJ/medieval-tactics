@@ -4,15 +4,25 @@ Item {
     id: game
     signal quitButtonClicked()
 
+    function showShop() {
+        shop.visible = true;
+        unitControls.visible = false;
+    }
+    function showUnitControls() {
+        unitControls.visible = true;
+        shop.visible = false;
+    }
+
     function redraw() {
         unitControls.updateSelectedUnitState()
         map.redraw()
-        if(gameContext.isShopReady()) {
-            unitControls.visible = true
-            shop.visible = false
-        }
         currentPlayer.updateText()
         remainingTurns.updateText()
+        if (!gameContext) return;
+        if (gameContext.isShopReady())
+            showUnitControls()
+        else
+            showShop()
     }
 
     Button {
@@ -135,6 +145,5 @@ Item {
         onReadyButtonClicked: {
             game.redraw()
         }
-
     }
 }
