@@ -1,6 +1,5 @@
 #include "Player.h"
 #include <AttackUnit.h>
-#include <qDebug>
 #include <stdexcept>
 
 

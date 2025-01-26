@@ -72,13 +72,7 @@ Rectangle {
 
             Button {
                 title: "Move"
-
-                MouseArea {
-                    anchors.fill: parent
-
-                    onClicked: unitControls.moveButtonClicked()
-                }
-
+                onClicked: unitControls.moveButtonClicked()
             }
             // Button {
             //     title: "Attack"
@@ -95,6 +89,6 @@ Rectangle {
     }
 
     Keys.onPressed: (e) => {
-        if (e.key == Qt.Key_W && selectedUnit.visible) unitControls.moveButtonClicked()
+        if (e.key === Qt.Key_W && selectedUnit.visible) unitControls.moveButtonClicked()
     }
 }

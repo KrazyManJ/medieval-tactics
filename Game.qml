@@ -7,10 +7,12 @@ Item {
     function showShop() {
         shop.visible = true;
         unitControls.visible = false;
+        unitControls.focus = false;
     }
     function showUnitControls() {
         unitControls.visible = true;
         shop.visible = false;
+        unitControls.focus = true;
     }
 
     function redraw() {
@@ -26,15 +28,10 @@ Item {
     }
 
     Button {
-        id: quitGame
         title: "Quit"
         width: 140
         height: 40
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: game.quitButtonClicked()
-        }
+        onClicked: game.quitButtonClicked()
     }
 
     Text {

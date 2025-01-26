@@ -27,8 +27,7 @@ Item{
                 continue;
             }
 
-            //console.log("Child at row:", child.row, "column:", child.column, "unit visible:", child.unit.visible);
-            if(gameContext.getCurrentPlayerOnTurn().color === "orange") {
+            if(gameContext.getCurrentPlayerOnTurn().color === "blue") {
                 if(child.column < columns/2) {
                     if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
                         child.state = "Place";
@@ -63,10 +62,10 @@ Item{
             if(!child.redraw)
                 continue
 
-            if(map.state == "display"){
+            if(map.state === "display"){
                 child.state = "display"
                 child.redraw();
-            }else if(map.state == "move"){
+            }else if(map.state === "move"){
                 if(gameContext.canUnitOfCurrentPlayerWalkToDest(child.row, child.column)){
                     child.state = "inRange"
                 }

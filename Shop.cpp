@@ -26,11 +26,7 @@ void Shop::selectBuyingUnit(std::string unitName){
 
 
 bool Shop::isReady() {
-    if(m_isFirstPlayerReady == true && m_isSecondPlayerReady == true) {
-        return true;
-    } else {
-        return false;
-    }
+    return m_isFirstPlayerReady == true && m_isSecondPlayerReady == true;
 }
 
 void Shop::markReady() {

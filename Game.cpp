@@ -12,12 +12,8 @@ Game::Game() {
     shop = new Shop();
 
     firstPlayer = new Player(FIRST_PLAYER_COLOR, START_MONEY);
-    firstPlayer->addUnit(new AttackUnit(1.0,1,2,1,1,{GroundType::Grass},{.row=2,.column=4},5,"Warrior","This is warrior, now he just moves"));
-    firstPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=1,.column=3},5,"Druid","This is knight, now he just moves"));
 
     secondPlayer = new Player(SECOND_PLAYER_COLOR, START_MONEY);
-    secondPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=1,.column=1},5,"Priest","This is warrior, now he just moves"));
-    secondPlayer->addUnit(new AttackUnit(1.0,1,1,1,1,{GroundType::Grass},{.row=4,.column=1},5,"Warrior","This is knight, now he just moves"));
 
     firstPlayerOnTurn = true;
     turns = 0;
@@ -40,7 +36,9 @@ Shop* Game::getShop() { return shop; }
 bool Game::isFirstPlayerOnTurn() { return firstPlayerOnTurn; }
 
 Player* Game::getPlayerOnTurn() {
-    return (!shop->isReady() ? shop->isFirstPlayerReady() :  isFirstPlayerOnTurn()) ? firstPlayer : secondPlayer;
+    return (!shop->isReady() ? !shop->isFirstPlayerReady() : isFirstPlayerOnTurn())
+       ? firstPlayer
+       : secondPlayer;
 }
 
 Player* Game::getOponentPlayerOfPlayerOnTurn() {

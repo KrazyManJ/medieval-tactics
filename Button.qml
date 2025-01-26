@@ -1,7 +1,5 @@
 import QtQuick
 
-// TODO: Make cursor to be point when hovered
-
 Rectangle{
     id: button
     property string title: "title"
@@ -11,6 +9,8 @@ Rectangle{
     color: "#AA5500"
     state: "normal"
     radius: 4
+
+    signal clicked()
 
     Text{
         id: label
@@ -42,7 +42,7 @@ Rectangle{
             name: "hover"
             PropertyChanges {
                 target: button
-                color: "#BB5500"
+                color: "#CC5500"
             }
         }
     ]
@@ -54,6 +54,7 @@ Rectangle{
 
         onClicked: {
             button.state = "pressed"
+            button.clicked()
         }
 
         onEntered: {

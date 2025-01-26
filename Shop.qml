@@ -33,7 +33,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Image 1 clicked!")
                     gameContext.selectButyingUnitInShop(knightRectangle.unitName)
                     shop.buyingUnitSelected()
                 }
@@ -59,7 +58,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Image 2 clicked!")
                     gameContext.selectButyingUnitInShop(priestRectangle.unitName)
                     shop.buyingUnitSelected()
                 }
@@ -85,7 +83,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Image 3 clicked!")
                     gameContext.selectButyingUnitInShop(druidRectangle.unitName)
                     shop.buyingUnitSelected()
                 }

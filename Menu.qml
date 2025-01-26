@@ -65,20 +65,14 @@ Item {
                 title: "Start game"
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: mainMenu.createGameButtonClicked()
-                }
+                onClicked: mainMenu.createGameButtonClicked()
             }
 
             Button {
                 title: "Quit"
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: mainMenu.quitButtonClicked()
-                }
+                onClicked: mainMenu.quitButtonClicked()
             }
         }
     }
