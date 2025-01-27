@@ -19,37 +19,23 @@ Item{
     signal unitBought()
 
     function enterPlacementMode() {
-
         for (let i = 0; i < grid.children.length; i++) {
             let child = grid.children[i];
 
-            if (!child.redraw) {
+            if (!child.redraw)
                 continue;
-            }
 
-            if(gameContext.getCurrentPlayerOnTurn().color === "blue") {
-                if(child.column < columns/2) {
-                    if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
-                        child.state = "Place";
-                    } else if (child.unit.visible) {
-                        child.state = "display";
-                    }
+            const isSideOfCurrentPlayer = gameContext.getCurrentPlayerOnTurn().color === "blue"
+                ? child.column < columns/2
+                : child.column > columns/2;
+            if (!isSideOfCurrentPlayer)
+                continue;
 
-                    child.redraw();
-                }
-            } else {
-                if(child.column > columns/2) {
-                    if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass") {
-                        child.state = "Place";
-                    } else if (child.unit.visible) {
-                        child.state = "display";
-                    }
-
-                    child.redraw();
-                }
-            }
-
-
+            if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass")
+                child.state = "place";
+            else if (child.unit.visible)
+                child.state = "display";
+            child.redraw();
         }
     }
 
@@ -64,16 +50,17 @@ Item{
 
             if(map.state === "display"){
                 child.state = "display"
-                child.redraw();
-            }else if(map.state === "move"){
-                if(gameContext.canUnitOfCurrentPlayerWalkToDest(child.row, child.column)){
-                    child.state = "inRange"
-                }
-                else{
-                    child.state = "display"
-                }
-                child.redraw();
             }
+            else if(map.state === "move"){
+                if(gameContext.canUnitOfCurrentPlayerWalkToDest(child.row, child.column))
+                    child.state = "inRange"
+                else
+                    child.state = "display"
+            }
+            else if (map.state === "use") {
+                child.state = "use";
+            }
+            child.redraw();
 
         }
     }

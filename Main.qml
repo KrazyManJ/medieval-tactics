@@ -9,7 +9,6 @@ Window {
     minimumHeight: 480
     color: "#f6ebd5"
 
-
     visibility: Window.FullScreen
 
     function showGame() {
@@ -41,6 +40,23 @@ Window {
         anchors.fill: parent
         visible: false
 
-        onQuitButtonClicked: app.showMenu()
+        onQuitButtonClicked: app.showMenu();
+
+        onGameOver: {
+            gameOver.visible = true;
+            game.visible = false;
+        }
+    }
+
+    GameOver {
+        id: gameOver
+
+        visible: false
+        anchors.fill: parent
+
+        onMenuButtonClicked: {
+            gameOver.visible = false;
+            menu.visible = true;
+        }
     }
 }

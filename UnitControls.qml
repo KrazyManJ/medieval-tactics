@@ -7,6 +7,7 @@ Rectangle {
     focus: true
 
     signal moveButtonClicked()
+    signal useButtonClicked()
 
     function updateSelectedUnitState() {
         const foundUnit = gameContext.getSelectedUnitOfCurrentPlayer()
@@ -18,7 +19,8 @@ Rectangle {
         noUnitSelected.visible = false;
         selectedUnit.visible = true;
         unitPreview.img = foundUnit.name.toLowerCase();
-        unitLabel.text = foundUnit.name
+        unitLabel.text = foundUnit.name;
+        hpLabel.text = foundUnit.hp;
     }
 
     Item {
@@ -66,6 +68,16 @@ Rectangle {
             font.pixelSize: 36
         }
 
+        Text {
+            id: hpLabel
+            anchors {
+                left: unitPreview.right
+                top: unitLabel.bottom
+                leftMargin: 10
+                topMargin: 20
+            }
+        }
+
         Row {
             id: btnContainer
             spacing: 10
@@ -77,6 +89,7 @@ Rectangle {
 
             Button {
                 title: "Attack"
+                onClicked: unitControls.useButtonClicked()
             }
 
             anchors {

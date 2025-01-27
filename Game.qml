@@ -3,6 +3,7 @@ import QtQuick
 Item {
     id: game
     signal quitButtonClicked()
+    signal gameOver()
 
     function showShop() {
         shop.visible = true;
@@ -21,6 +22,10 @@ Item {
         currentPlayer.updateText()
         remainingTurns.updateText()
         if (!gameContext) return;
+        if (gameContext.isGameOver()) {
+            game.gameOver()
+            return;
+        }
         if (gameContext.isShopReady())
             showUnitControls()
         else
@@ -121,6 +126,11 @@ Item {
 
         onMoveButtonClicked: {
             map.state = map.state === "display" ? "move" : "display"
+            game.redraw()
+        }
+
+        onUseButtonClicked: {
+            map.state = map.state === "display" ? "use" : "display"
             game.redraw()
         }
     }

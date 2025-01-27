@@ -20,11 +20,9 @@ void AttackUnit::useAbility(int row, int column)
     std::vector<Unit*> enemyUnits = enemyPlayer->getUnits();
 
     for(Unit* enemyUnit : enemyUnits){
-
-        if(enemyUnit->getPosition().row == row
-            and enemyUnit->getPosition().column == column){
+        if(enemyUnit->getPosition().row == row && enemyUnit->getPosition().column == column) {
             enemyUnit->setHp(enemyUnit->getHp()-(getAttackPower()/enemyUnit->getDefense()));
-        };
-
+            break;
+        }
     };
 }

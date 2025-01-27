@@ -44,6 +44,7 @@ public:
 
     void markTurn();
     int getRemainingRoundTurns();
+    bool isGameOver();
 
     ~Game();
 };

@@ -23,7 +23,7 @@ Q_INVOKABLE QVariant GameContext::getUnitByPos(int row, int column) {
         std::vector<Unit*> units = player->getUnits();
         auto unitIt = std::find_if(units.begin(), units.end(), [row,column](Unit* unit){
             Position pos = unit->getPosition();
-            return pos.row == row && pos.column == column;
+            return pos.row == row && pos.column == column && unit->getHp() > 0;
         });
         if (unitIt == units.end()) continue;
 
@@ -95,4 +95,12 @@ Q_INVOKABLE bool GameContext::isShopReady(){
 
 Q_INVOKABLE void GameContext::playerReady() {
     Game::getInstance()->getShop()->markReady();
+}
+
+Q_INVOKABLE void GameContext::useUnitOfCurrentPlayer(int destRow, int destColumn) {
+    Game::getInstance()->useUnitAbilityOfCurrentPlayer(destRow,destColumn);
+}
+
+Q_INVOKABLE bool GameContext::isGameOver() {
+    return Game::getInstance()->isGameOver();
 }

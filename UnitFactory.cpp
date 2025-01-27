@@ -4,7 +4,7 @@ Unit* UnitFactory::createUnit(const std::string& unitType,int row,int column){
     if (unitType == "Knight") {
         return new AttackUnit (
             100, 10, 2, 3, 5, std::vector<GroundType>{GroundType::Grass},
-            Position{.row=row,.column=column}, 10, "warrior", "A brave knight."
+            Position{.row=row,.column=column}, 500, "warrior", "A brave knight."
             );
     } else if (unitType == "Priest") {
         return new HealUnit (

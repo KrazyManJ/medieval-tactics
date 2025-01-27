@@ -39,6 +39,10 @@ public:
     Q_INVOKABLE bool isShopReady();
 
     Q_INVOKABLE void playerReady();
+
+    Q_INVOKABLE void useUnitOfCurrentPlayer(int destRow, int destColumn);
+
+    Q_INVOKABLE bool isGameOver();
 signals:
 };
 

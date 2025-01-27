@@ -43,6 +43,7 @@ qt_add_qml_module(app-medieval-tactics
         RESOURCES assets.qrc
         QML_FILES Game.qml
         QML_FILES Shop.qml
+        QML_FILES GameOver.qml
 
 
 )

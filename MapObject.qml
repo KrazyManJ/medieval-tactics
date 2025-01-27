@@ -71,12 +71,21 @@ Rectangle{
         },
 
         State {
-            name: "Place"
+            name: "place"
             PropertyChanges {
                 target: mapObject
                 border.color: "red"
             }
+        },
+
+        State {
+            name: "use"
+            PropertyChanges {
+                target: mapObject
+                color: "red"
+            }
         }
+
     ]
 
     MouseArea{
@@ -88,13 +97,17 @@ Rectangle{
                 mapObject.unitSelected()
             }
 
-            if(mapObject.state === "Place") {
+            else if(mapObject.state === "place") {
                 gameContext.buyUnitForPlayer(row,column)
                 mapObject.unitBought()
             }
 
+            else if(mapObject.state === "use"){
+                console.log("what")
+                gameContext.useUnitOfCurrentPlayer(mapObject.row, mapObject.column)
+                mapObject.unitSelected()
+            }
         }
-
     }
 
 
@@ -105,12 +118,17 @@ Rectangle{
         anchors {
             fill: parent
         }
+
         MouseArea{
             anchors.fill: parent
 
             onClicked: {
                 if(gameContext.getCurrentPlayerOnTurn().color == unit.color && mapObject.state === "display"){
                     gameContext.selectUnitOfCurrentPlayer(mapObject.row, mapObject.column)
+                    mapObject.unitSelected()
+                }
+                else if (mapObject.state === "use") {
+                    gameContext.useUnitOfCurrentPlayer(mapObject.row, mapObject.column)
                     mapObject.unitSelected()
                 }
             }
