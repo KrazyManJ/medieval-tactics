@@ -63,7 +63,8 @@ void Player::deselectUnit() {
 Player::~Player() {
     units.clear();
 }
-void Player::getNumberOfUnits() {
+
+int Player::getNumberOfUnits() {
     std::cout << units.size() << std::endl;
 }
 

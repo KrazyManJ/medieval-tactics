@@ -87,7 +87,6 @@ Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
 
 Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
     Game::getInstance()->getShop()->buyUnitForCurrentPlayer(row,column);
-    Game::getInstance()->getPlayerOnTurn()->getNumberOfUnits();
 }
 
 Q_INVOKABLE bool GameContext::isShopReady(){

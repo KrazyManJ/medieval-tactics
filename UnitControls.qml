@@ -74,9 +74,10 @@ Rectangle {
                 title: "Move"
                 onClicked: unitControls.moveButtonClicked()
             }
-            // Button {
-            //     title: "Attack"
-            // }
+
+            Button {
+                title: "Attack"
+            }
 
             anchors {
                 right: parent.right
