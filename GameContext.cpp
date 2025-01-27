@@ -45,6 +45,11 @@ Q_INVOKABLE void GameContext::selectUnitOfCurrentPlayer(int row, int column) {
     Game::getInstance()->getPlayerOnTurn()->selectUnit(row,column);
 }
 
+
+Q_INVOKABLE int GameContext::getPlayerMoney() {
+    return Game::getInstance()->getShop()->getPlayerMoney();
+}
+
 Q_INVOKABLE void GameContext::selectButyingUnitInShop(const QString& unitName) {
     Game::getInstance()->getShop()->selectBuyingUnit(unitName.toStdString());
 }

@@ -32,9 +32,19 @@ void Shop::selectBuyingUnit(std::string unitName){
     selectedBuyingUnit = unitName;
 }
 
-
 bool Shop::isReady() {
     return m_isFirstPlayerReady == true && m_isSecondPlayerReady == true;
+}
+
+int Shop::getPlayerMoney() {
+    Game* game = Game::getInstance();
+    if(m_isFirstPlayerReady == false) {
+        Player* player = game->getFirstPlayer();
+        return player->getMoney();
+    } else {
+        Player* player = game->getSecondPlayer();
+        return player->getMoney();
+    }
 }
 
 void Shop::markReady() {

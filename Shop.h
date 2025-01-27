@@ -15,6 +15,7 @@ public:
     bool isReady();
     void markReady();
     bool isFirstPlayerReady();
+    int getPlayerMoney();
     ~Shop();
 };
 

@@ -42,6 +42,8 @@ public:
 
     Q_INVOKABLE void useUnitOfCurrentPlayer(int destRow, int destColumn);
 
+    Q_INVOKABLE int getPlayerMoney();
+
     Q_INVOKABLE bool isGameOver();
 signals:
 };
