@@ -7,16 +7,24 @@ Shop::Shop() {
 
 void Shop::buyUnitForCurrentPlayer(int row, int column) {
     Game* game = Game::getInstance();
-
-
-
     Unit* unit = UnitFactory::createUnit(selectedBuyingUnit, row, column);
+
     if(m_isFirstPlayerReady == false) {
         Player* player = game->getFirstPlayer();
-        player->addUnit(unit);
+        if(player->getMoney() >= unit->getCost()) {
+            int cash = player->getMoney() - unit->getCost();
+            player->setMoney(cash);
+            player->addUnit(unit);
+            std::cout << "Player 1 cash: " << player->getMoney() << std::endl;
+        }
     } else {
         Player* player = game->getSecondPlayer();
-        player->addUnit(unit);
+        if(player->getMoney() >= unit->getCost()) {
+            int cash = player->getMoney() - unit->getCost();
+            player->setMoney(cash);
+            player->addUnit(unit);
+            std::cout << "Player 2 cash: " << player->getMoney() << std::endl;
+        }
     }
 }
 

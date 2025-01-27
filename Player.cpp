@@ -69,6 +69,10 @@ int Player::getNumberOfUnits() {
 }
 
 
+void Player::setMoney(int amount) {
+    money = amount;
+}
+
 QVariantMap Player::serialize() {
     QVariantMap map;
     map["color"] = QString::fromUtf8(getColor().c_str());

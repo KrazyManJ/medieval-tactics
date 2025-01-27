@@ -23,7 +23,7 @@ public:
 
     inline static const std::string FIRST_PLAYER_COLOR = "blue";
     inline static const std::string SECOND_PLAYER_COLOR = "orange";
-    inline static const int START_MONEY = 5000;
+    inline static const int START_MONEY = 1000;
 
     Game();
     static Game* getInstance();

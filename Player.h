@@ -20,6 +20,7 @@ public:
     Unit* getSelectedUnit() const;
     std::string getColor() const;
     int getMoney() const;
+    void setMoney(int amount);
 
     bool hasSelectedUnit() const;
     void addUnit(Unit* unit);
