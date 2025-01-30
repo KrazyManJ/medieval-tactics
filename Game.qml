@@ -37,6 +37,10 @@ Item {
             showShop()
     }
 
+    function init() {
+        map.state = "display"
+    }
+
     Button {
         title: "Quit"
         width: 140

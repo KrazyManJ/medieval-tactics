@@ -24,6 +24,7 @@ Window {
     function createNewGame() {
         gameContext.createNewGame()
         app.showGame()
+        game.init()
         game.redraw()
     }
 

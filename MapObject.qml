@@ -9,7 +9,6 @@ Rectangle{
     signal unitBought()
     state: "display"
 
-
     function redraw(){
         const foundUnit = gameContext.getUnitByPos(mapObject.row,mapObject.column)
         if(foundUnit != null){
@@ -20,11 +19,6 @@ Rectangle{
         else {
             unit.visible = false;
         }
-
-    }
-
-    color: (()=> {
-        if (!gameContext) return null;
         const type = gameContext.getMapObjectAt(row, column).type;
         const MAP = {
             water: "blue",
@@ -34,8 +28,11 @@ Rectangle{
             hill: "gray",
             tree: "#55ff55",
         }
-        return MAP[type];
-    })()
+        mapObject.color = MAP[type]
+
+    }
+
+    color: "transparent"
 
     // Image {
     //     source: (() => {
@@ -82,8 +79,11 @@ Rectangle{
         State {
             name: "use"
             PropertyChanges {
+                target: abilityIndicator
+                visible: true
+            }
+            PropertyChanges {
                 target: mapObject
-                color: "red"
             }
         }
 
@@ -104,12 +104,12 @@ Rectangle{
             }
 
             else if(mapObject.state === "use"){
-                console.log("what")
                 gameContext.useUnitOfCurrentPlayer(mapObject.row, mapObject.column)
                 mapObject.unitSelected()
             }
         }
     }
+
 
 
     Unit{
@@ -130,9 +130,19 @@ Rectangle{
                 }
                 else if (mapObject.state === "use") {
                     gameContext.useUnitOfCurrentPlayer(mapObject.row, mapObject.column)
+
                     mapObject.unitSelected()
                 }
             }
         }
+    }
+
+    Rectangle {
+        id: abilityIndicator
+        color: "red"
+        opacity: 0.2
+        anchors.fill: parent
+        visible: false
+
     }
 }

@@ -58,7 +58,10 @@ Item{
                     child.state = "display"
             }
             else if (map.state === "use") {
-                child.state = "use";
+                child.state =
+                        gameContext.canUseAbilityOnDest(child.row, child.column)
+                        ? "use"
+                        : "display";
             }
             child.redraw();
 

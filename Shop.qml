@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls
 
 Rectangle {
     id: shop
@@ -116,7 +115,7 @@ Rectangle {
 
         // Ready Button
         Button {
-            text: "Ready"
+            title: "Ready"
             onClicked: {
                 gameContext.playerReady()
                 shop.readyButtonClicked()
