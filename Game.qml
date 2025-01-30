@@ -182,7 +182,8 @@ Item {
         anchors.top: currentPlayerLabel.bottom
         anchors.right: parent.right
         anchors.margins: 10
+        anchors.topMargin: -4
         color: "#000"
-        font.bold: true
+        font.pixelSize: 18
     }
 }
