@@ -9,20 +9,7 @@ Rectangle {
     signal buyingUnitSelected()
     signal readyButtonClicked()
 
-    Text {
-        id: moneyDisplay
-        function updateMoney() {
-            const money = gameContext.getPlayerMoney();
-            moneyDisplay.text = money;
-        }
 
-        text: "Money: " + gameContext.getPlayerMoney()
-        anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.margins: 10
-        color: "#000"
-        font.bold: true
-    }
 
     Row {
         anchors.centerIn: parent

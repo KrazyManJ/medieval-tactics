@@ -32,6 +32,7 @@ Rectangle{
             sand: "yellow",
             mud: "brown",
             hill: "gray",
+            tree: "#55ff55",
         }
         return MAP[type];
     })()

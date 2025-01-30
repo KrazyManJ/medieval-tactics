@@ -82,6 +82,7 @@ Item{
                 onUnitBought: {
                     map.state = "display"
                     map.redraw()
+                    map.unitBought()
                 }
                 required property int index
                 row: Math.floor(index / grid.columns)

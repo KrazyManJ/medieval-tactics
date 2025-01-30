@@ -35,6 +35,8 @@ QVariantMap MapObject::serialize(){
         type = "sand"; break;
     case GroundType::Mud:
         type = "mud"; break;
+    case GroundType::Tree:
+        type = "tree"; break;
     default:
         type = "grass";
         break;

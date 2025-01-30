@@ -21,6 +21,7 @@ Item {
         map.redraw()
         currentPlayer.updateText()
         remainingTurns.updateText()
+        moneyDisplay.updateMoney()
         if (!gameContext) return;
         if (gameContext.isGameOver()) {
             game.gameOver()
@@ -112,6 +113,11 @@ Item {
                 map.state = "display"
                 game.redraw()
             }
+
+            onUnitBought: {
+                map.state = "display"
+                game.redraw()
+            }
         }
     }
 
@@ -152,5 +158,20 @@ Item {
         onReadyButtonClicked: {
             game.redraw()
         }
+    }
+
+    Text {
+        id: moneyDisplay
+        function updateMoney() {
+            const money = gameContext.getPlayerMoney();
+            moneyDisplay.text = money;
+        }
+
+        text: "Money: " + gameContext.getPlayerMoney()
+        anchors.top: currentPlayerLabel.bottom
+        anchors.right: parent.right
+        anchors.margins: 10
+        color: "#000"
+        font.bold: true
     }
 }
