@@ -118,4 +118,7 @@ Q_INVOKABLE bool GameContext::canUseAbilityOnDest(int destRow, int destColumn) {
     return Game::getInstance()->getPlayerOnTurn()->getSelectedUnit()->canUseAbilityAt(destRow,destColumn);
 }
 
+Q_INVOKABLE void GameContext::deselect() {
+    Game::getInstance()->getPlayerOnTurn()->deselectUnit();
+}
 

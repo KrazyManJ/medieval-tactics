@@ -9,6 +9,15 @@ Rectangle {
     signal readyButtonClicked()
 
 
+    function redraw() {
+        const unit = gameContext.getShopDetails().unit;
+        [knightRectangle,priestRectangle,druidRectangle].forEach((shopItem) => {
+            if (shopItem === unit)
+                shopItem.border.color = "#f00"
+            else
+                shopItem.border.color = "#000"
+        })
+    }
 
     Row {
         anchors.centerIn: parent
@@ -24,7 +33,7 @@ Rectangle {
                 height: 100
                 color: "#FFF"
                 border.color: "#000"
-                radius: 5
+                border.width: 2
 
                 Image {
                     anchors.fill: parent
@@ -37,6 +46,7 @@ Rectangle {
                     onClicked: {
                         gameContext.selectButyingUnitInShop(knightRectangle.unitName)
                         shop.buyingUnitSelected()
+                        redraw()
                     }
                 }
             }
@@ -57,7 +67,7 @@ Rectangle {
                 height: 100
                 color: "#FFF"
                 border.color: "#000"
-                radius: 5
+                border.width: 2
 
                 Image {
                     anchors.fill: parent
@@ -70,6 +80,7 @@ Rectangle {
                     onClicked: {
                         gameContext.selectButyingUnitInShop(priestRectangle.unitName)
                         shop.buyingUnitSelected()
+                        redraw()
                     }
                 }
             }
@@ -90,7 +101,7 @@ Rectangle {
                 height: 100
                 color: "#FFF"
                 border.color: "#000"
-                radius: 5
+                border.width: 2
 
                 Image {
                     anchors.fill: parent
@@ -103,6 +114,7 @@ Rectangle {
                     onClicked: {
                         gameContext.selectButyingUnitInShop(druidRectangle.unitName)
                         shop.buyingUnitSelected()
+                        redraw()
                     }
                 }
             }
@@ -121,6 +133,12 @@ Rectangle {
                 shop.readyButtonClicked()
             }
         }
+
+        Button {
+            title: "Deselect"
+            onClicked: {
+                gameContext.deselect()
+            }
+        }
     }
 }
-
