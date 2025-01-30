@@ -35,6 +35,7 @@ Rectangle{
             name: "pressed"
             PropertyChanges {
                 target: button
+                color: "#883300"
             }
         },
 
@@ -55,6 +56,7 @@ Rectangle{
         onClicked: {
             button.state = "pressed"
             button.clicked()
+            resetTimer.start()
         }
 
         onEntered: {
@@ -65,6 +67,13 @@ Rectangle{
             button.state = "normal"
         }
     }
+
+    Timer {
+        id: resetTimer
+        interval: 200  // Doba, po které se tlačítko vrátí do normálu (ms)
+        onTriggered: button.state = "normal"
+    }
+
     transitions: [
         Transition {
             from: "hover"
@@ -75,6 +84,11 @@ Rectangle{
             from: "normal"
             to: "hover"
             ColorAnimation { target: button; duration: 100}
+        },
+        Transition {
+            from: "pressed"
+            to: "normal"
+            ColorAnimation { target: button; duration: 200 }
         }
     ]
 }
