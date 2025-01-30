@@ -35,6 +35,7 @@ Item {
             showUnitControls()
         else
             showShop()
+        unitControls.state = map.state
     }
 
     function init() {
@@ -119,6 +120,7 @@ Item {
             onUnitSelected: {
                 unitControls.updateSelectedUnitState()
                 map.state = "display"
+
                 game.redraw()
             }
 
@@ -139,12 +141,12 @@ Item {
         }
 
         onMoveButtonClicked: {
-            map.state = map.state === "display" ? "move" : "display"
+            map.state = map.state === "move" ? "display" : "move"
             game.redraw()
         }
 
         onUseButtonClicked: {
-            map.state = map.state === "display" ? "use" : "display"
+            map.state = map.state === "use" ? "display" : "use"
             game.redraw()
         }
     }
@@ -159,11 +161,12 @@ Item {
         }
 
         onBuyingUnitSelected: {
-            map.state = map.state == "display" ? "move" : "display"
+            map.state = map.state === "display" ? "place" : "display"
             map.enterPlacementMode();
         }
 
         onReadyButtonClicked: {
+            map.state = "display"
             game.redraw()
         }
     }

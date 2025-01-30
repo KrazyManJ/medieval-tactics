@@ -39,6 +39,23 @@ Rectangle {
         }
     }
 
+    states: [
+        State {
+            name: "move"
+            PropertyChanges {
+                target: moveBtn
+                state: "pressed"
+            }
+        },
+        State {
+            name: "use"
+            PropertyChanges {
+                target: useBtn
+                state: "pressed"
+            }
+        }
+    ]
+
     Item {
         id: selectedUnit
         visible: false
@@ -83,12 +100,14 @@ Rectangle {
             spacing: 10
 
             Button {
-                title: "Move"
+                id: moveBtn
+                title: "Move (W)"
                 onClicked: unitControls.moveButtonClicked()
             }
 
             Button {
-                title: "Attack"
+                id: useBtn
+                title: "Attack (A)"
                 onClicked: unitControls.useButtonClicked()
             }
 
@@ -103,6 +122,9 @@ Rectangle {
     }
 
     Keys.onPressed: (e) => {
-        if (e.key === Qt.Key_W && selectedUnit.visible) unitControls.moveButtonClicked()
+        if (e.key === Qt.Key_W && selectedUnit.visible)
+            unitControls.moveButtonClicked()
+        else if (e.key === Qt.Key_A && selectedUnit.visible)
+            unitControls.useButtonClicked()
     }
 }

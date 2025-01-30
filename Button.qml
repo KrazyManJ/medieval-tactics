@@ -70,7 +70,7 @@ Rectangle{
 
     Timer {
         id: resetTimer
-        interval: 200  // Doba, po které se tlačítko vrátí do normálu (ms)
+        interval: 100  // Doba, po které se tlačítko vrátí do normálu (ms)
         onTriggered: button.state = "normal"
     }
 
@@ -88,7 +88,7 @@ Rectangle{
         Transition {
             from: "pressed"
             to: "normal"
-            ColorAnimation { target: button; duration: 200 }
+            ColorAnimation { target: button; duration: 100 }
         }
     ]
 }

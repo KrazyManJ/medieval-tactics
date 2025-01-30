@@ -31,7 +31,7 @@ Item{
             if (!isSideOfCurrentPlayer)
                 continue;
 
-            if (!child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass")
+            if (map.state === "place" && !child.unit.visible && gameContext.getMapObjectAt(child.row, child.column).type === "grass")
                 child.state = "place";
             else if (child.unit.visible)
                 child.state = "display";
