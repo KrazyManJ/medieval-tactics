@@ -9,11 +9,15 @@ Item {
         shop.visible = true;
         unitControls.visible = false;
         unitControls.focus = false;
+        moneyDisplay.visible = true;
+        remainingTurns.visible = false;
     }
     function showUnitControls() {
         unitControls.visible = true;
         shop.visible = false;
         unitControls.focus = true;
+        moneyDisplay.visible = false;
+        remainingTurns.visible = true;
     }
 
     function redraw() {
