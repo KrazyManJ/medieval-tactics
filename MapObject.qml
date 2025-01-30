@@ -11,11 +11,12 @@ Rectangle{
 
     function redraw(){
         const foundUnit = gameContext.getUnitByPos(mapObject.row,mapObject.column)
-        if(foundUnit != null){
+        if(foundUnit){
             unit.visible = true;
             unit.color = foundUnit.color;
             unit.img = foundUnit.unit.name.toLowerCase()
-            unit.hp = foundUnit.hp
+            unit.hp = foundUnit.unit.hp
+            unit.maxhp = foundUnit.unit.maxhp
         }
         else {
             unit.visible = false;
@@ -31,17 +32,14 @@ Rectangle{
         }
         mapObject.color = MAP[type]
 
+        img.source =  "qrc:/assets/"+ gameContext.getMapObjectAt(row, column).type +".png"
     }
 
     color: "transparent"
 
     Image {
-        source: (() => {
-            if (!gameContext)
-                    return "qrc:/assets/grass.png";
-            const type = gameContext.getMapObjectAt(row, column).type
-            return "qrc:/assets/"+ type +".png"
-        })()
+        id: img
+        source: "qrc:/assets/"+ gameContext.getMapObjectAt(row, column).type +".png"
         anchors.fill: parent
         anchors.margins: 1
     }

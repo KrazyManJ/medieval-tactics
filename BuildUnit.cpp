@@ -24,3 +24,7 @@ bool BuildUnit::abilityAppliable(int row, int col) {
     auto* mapObject = Game::getInstance()->getMap()->getObjectAt(row,col);
     return !mapObject->isSolid();
 }
+
+std::string BuildUnit::abilityName() {
+    return "Build";
+}

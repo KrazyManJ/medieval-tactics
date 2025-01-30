@@ -35,3 +35,7 @@ bool AttackUnit::abilityAppliable(int row, int col) {
         [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col && !u->isDead(); }
         );
 }
+
+std::string AttackUnit::abilityName() {
+    return "Attack";
+}

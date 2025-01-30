@@ -34,3 +34,7 @@ bool HealUnit::abilityAppliable(int row, int col) {
         [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col && !u->isDead(); }
     );
 }
+
+std::string HealUnit::abilityName() {
+    return "Heal";
+}

@@ -25,6 +25,7 @@ Rectangle {
         defLabel.text = "Def: " + foundUnit.df;
         arLabel.text = "AR: " + foundUnit.ar;
         wrLabel.text = "WR: " + foundUnit.wr;
+        useBtn.title = foundUnit.ability+" (A)"
     }
 
     Item {

@@ -14,7 +14,6 @@ Rectangle {
         for (let i = 0; i < shopItems.children.length; i++) {
             let child = shopItems.children[i]
             if (!child.unitName) continue;
-            console.log(child.unitName, child)
             if (child.unitName === unit)
                 child.children[0].color = "#f00"
             else
@@ -54,7 +53,6 @@ Rectangle {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            console.log(gameContext.getShopDetails().unit,modelData.name)
                             if (gameContext.getShopDetails().unit === modelData.name) {
                                 gameContext.deselectShopUnit();
                             }

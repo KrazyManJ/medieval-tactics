@@ -122,3 +122,13 @@ Q_INVOKABLE void GameContext::deselectShopUnit() {
     Game::getInstance()->getShop()->selectBuyingUnit("");
 }
 
+Q_INVOKABLE QString GameContext::getWinner() {
+    auto units = Game::getInstance()->getFirstPlayer()->getUnits();
+    return QString::fromUtf8(
+        std::any_of(units.begin(),units.end(),[](Unit* u){return !u->isDead();})
+        ?
+            Game::getInstance()->getSecondPlayer()->getColor()
+            :
+            Game::getInstance()->getFirstPlayer()->getColor()
+        );
+}

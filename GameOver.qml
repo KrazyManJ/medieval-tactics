@@ -1,10 +1,10 @@
 import QtQuick
 
-Item {
+Rectangle {
     id: gameOver
-    property string winnerColor
+    property string winnerColor: gameContext.getWinner()
 
-    // color: gameOver.winnerColor
+    color: gameOver.winnerColor
 
     signal menuButtonClicked()
 

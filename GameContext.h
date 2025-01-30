@@ -51,6 +51,8 @@ public:
     Q_INVOKABLE bool isGameOver();
 
     Q_INVOKABLE bool canUseAbilityOnDest(int destRow, int destColumn);
+
+    Q_INVOKABLE QString getWinner();
 signals:
 };
 

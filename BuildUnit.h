@@ -14,6 +14,7 @@ public:
 
     void ability(int row, int column) override;
     bool abilityAppliable(int row, int col) override;
+    std::string abilityName() override;
 };
 
 #endif // BUILDUNIT_H

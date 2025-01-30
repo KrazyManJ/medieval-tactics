@@ -7,6 +7,7 @@ Unit::Unit(float hp, int defense, int walkingRange,
            float power, std::string name, std::string description)
 {
     m_hp = hp;
+    m_maxhp = hp;
     m_defense = defense;
     m_walkingRange = walkingRange;
     m_abilityRange = abilityRange;
@@ -25,7 +26,7 @@ float Unit::getHp()
 
 void Unit::setHp(float hp)
 {
-    m_hp = hp;
+    m_hp = hp > m_maxhp ? m_maxhp : hp;
 }
 
 int Unit::getDefense()
@@ -78,11 +79,14 @@ QVariantMap Unit::serialize()
     map["position"] = getPosition().serialize();
     map["walkingRange"] = getWalkingRange();
     map["hp"] = getHp();
+    map["maxhp"] = getMaxHp();
     map["df"] = getDefense();
     map["wr"] = getWalkingRange();
     map["ar"] = getAbilityRange();
     map["ap"] = getPower();
-    //map["desc"] = getDescription();
+    map["cost"] = getCost();
+    map["desc"] = QString::fromUtf8(getDescription());
+    map["ability"] = QString::fromUtf8(abilityName());
     return map;
 }
 
@@ -117,4 +121,8 @@ void Unit::useAbility(int row, int col) {
 
 bool Unit::isDead() {
     return getHp() <= 0;
+}
+
+float Unit::getMaxHp() {
+    return m_maxhp;
 }

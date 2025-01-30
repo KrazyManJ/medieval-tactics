@@ -10,6 +10,7 @@
 class Unit : public IQMLSerializable
 {
     float m_hp;
+    float m_maxhp;
     int m_defense;
     int m_walkingRange;
     int m_abilityRange;
@@ -29,6 +30,8 @@ public:
 
     virtual void ability(int row, int col) = 0;
     virtual bool abilityAppliable(int row, int col) = 0;
+    virtual std::string abilityName() = 0;
+
 
     float getHp();
     void setHp(float hp);
@@ -46,6 +49,7 @@ public:
     int getWalkingRange();
     int getAbilityRange();
     int getPower();
+    float getMaxHp();
 
     bool isDead();
 };
