@@ -12,13 +12,17 @@ Window {
     visibility: Window.FullScreen
 
     function showGame() {
-        game.visible = true;
-        menu.visible = false;
+        fadingScene.perform(() => {
+            game.visible = true;
+            menu.visible = false;
+        })
     }
 
     function showMenu() {
-        game.visible = false;
-        menu.visible = true;
+        fadingScene.perform(() => {
+            game.visible = false;
+            menu.visible = true;
+        })
     }
 
     function createNewGame() {
@@ -33,7 +37,7 @@ Window {
         anchors.fill: parent
 
         onCreateGameButtonClicked: app.createNewGame()
-        onQuitButtonClicked: Qt.quit()
+        onQuitButtonClicked: fadingScene.perform(() => Qt.quit(),1000)
     }
 
     Game {
@@ -58,6 +62,40 @@ Window {
         onMenuButtonClicked: {
             gameOver.visible = false;
             menu.visible = true;
+        }
+    }
+
+    Rectangle {
+        id: fadingScene
+        anchors.fill: parent
+        color: "black"
+        opacity: 0
+
+        function perform(fct, duration = 200) {
+            timer.interval = duration
+            fade.duration = duration
+
+            fadingScene.fct = fct
+            fadingScene.opacity = 1
+            timer.start()
+        }
+
+        property var fct;
+
+        Timer {
+            id: timer
+            interval: fadingScene.duration
+            onTriggered: {
+                fadingScene.fct()
+                fadingScene.opacity = 0
+            }
+        }
+
+        Behavior on opacity {
+            NumberAnimation {
+                id: fade
+                duration: 200
+            }
         }
     }
 }
