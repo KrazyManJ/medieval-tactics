@@ -120,12 +120,13 @@ Item {
             onUnitSelected: {
                 unitControls.updateSelectedUnitState()
                 map.state = "display"
-
                 game.redraw()
             }
 
             onUnitBought: {
                 map.state = "display"
+                gameContext.deselectShopUnit()
+                shop.redraw()
                 game.redraw()
             }
         }
@@ -161,7 +162,8 @@ Item {
         }
 
         onBuyingUnitSelected: {
-            map.state = map.state === "display" ? "place" : "display"
+            map.state = gameContext.getShopDetails().unit !== "" ? "place" : "display"
+            shop.redraw()
             map.enterPlacementMode();
         }
 

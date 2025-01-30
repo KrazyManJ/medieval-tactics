@@ -18,7 +18,7 @@ Item {
     }
 
     Text {
-        text: "Copyright 2024-2025 © Created by Jaroslav Korčák, Daniel Němec & Miloslav Švábenský"
+        text: "Copyright 2024-2025 © Created by Jaroslav Korcak, Daniel Nemec & Miloslav Svabensky"
         anchors {
             bottom: parent.bottom
             right: parent.right

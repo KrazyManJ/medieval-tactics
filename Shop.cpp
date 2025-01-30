@@ -61,5 +61,6 @@ bool Shop::isFirstPlayerReady() {
 QVariantMap Shop::serialize() {
     QVariantMap map;
     map["unit"] = QString::fromUtf8(selectedBuyingUnit);
+    map["availableUnits"] = UnitFactory::serialize();
     return map;
 }
