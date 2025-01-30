@@ -10,5 +10,8 @@
         <file>assets/music.mp3</file>
         <file>assets/hill.png</file>
         <file>assets/mud.png</file>
+        <file>assets/sand.png</file>
+        <file>assets/tree.png</file>
+        <file>assets/water.png</file>
     </qresource>
 </RCC>

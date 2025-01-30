@@ -15,6 +15,7 @@ Rectangle{
             unit.visible = true;
             unit.color = foundUnit.color;
             unit.img = foundUnit.unit.name.toLowerCase()
+            unit.hp = foundUnit.hp
         }
         else {
             unit.visible = false;
