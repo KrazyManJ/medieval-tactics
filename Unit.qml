@@ -16,4 +16,21 @@ Rectangle {
         mirror: true
         anchors.margins: 1
     }
+
+    Rectangle {
+        visible: false
+        border {
+            color: black
+            width: 2
+        }
+
+        width: 60
+        height: 10
+        anchors {
+            bottom: unit.top
+            bottomMargin: 1
+            horizontalCenter: unit.horizontalCenter
+        }
+        color: "red"
+    }
 }
