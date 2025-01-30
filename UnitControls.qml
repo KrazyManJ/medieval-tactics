@@ -20,7 +20,11 @@ Rectangle {
         selectedUnit.visible = true;
         unitPreview.img = foundUnit.name.toLowerCase();
         unitLabel.text = foundUnit.name;
-        hpLabel.text = foundUnit.hp;
+        hpLabel.text = "HP: " + foundUnit.hp;
+        apLabel.text = "AP: " + foundUnit.ap;
+        defLabel.text = "Def: " + foundUnit.df;
+        arLabel.text = "AR: " + foundUnit.ar;
+        wrLabel.text = "WR: " + foundUnit.wr;
     }
 
     Item {
@@ -81,19 +85,78 @@ Rectangle {
                 left: unitPreview.right
                 top: unitPreview.top
                 leftMargin: 10
+                topMargin: -20
             }
             font.pixelSize: 36
         }
 
-        Text {
-            id: hpLabel
+
+        Row {
+            spacing: 10
             anchors {
                 left: unitPreview.right
                 top: unitLabel.bottom
-                leftMargin: 10
-                topMargin: 20
+                leftMargin: 7
+            }
+
+            Column {
+                Text {
+                    id: hpLabel
+                    anchors {
+                        leftMargin: 10
+                        topMargin: -5
+                    }
+                    font.pixelSize: 18
+                }
+
+                Text {
+                    id: apLabel
+                    anchors {
+                        leftMargin: 10
+                        topMargin: 7.5
+                    }
+                    font.pixelSize: 18
+                }
+
+                Text {
+                    id: defLabel
+                    anchors {
+                        leftMargin: 10
+                        topMargin: 20
+                    }
+                    font.pixelSize: 18
+                }
+            }
+
+
+            Column {
+                Text {
+                    id: arLabel
+                    anchors {
+                        leftMargin: 100
+                        topMargin: 20
+                    }
+                    font.pixelSize: 18
+                }
+
+                Text {
+                    id: wrLabel
+                    anchors {
+                        leftMargin: 100
+                        topMargin: 25
+                    }
+                    font.pixelSize: 18
+                }
             }
         }
+
+
+
+
+
+
+
+
 
         Row {
             id: btnContainer

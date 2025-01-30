@@ -78,6 +78,11 @@ QVariantMap Unit::serialize()
     map["position"] = getPosition().serialize();
     map["walkingRange"] = getWalkingRange();
     map["hp"] = getHp();
+    map["df"] = getDefense();
+    map["wr"] = getWalkingRange();
+    map["ar"] = getAbilityRange();
+    map["ap"] = getPower();
+    //map["desc"] = getDescription();
     return map;
 }
 
@@ -94,6 +99,14 @@ int Unit::getWalkingRange()
 
 int Unit::getCost() {
     return m_cost;
+}
+
+int Unit::getPower() {
+    return m_power;
+}
+
+int Unit::getAbilityRange() {
+    return m_abilityRange;
 }
 
 void Unit::useAbility(int row, int col) {
