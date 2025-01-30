@@ -1,4 +1,5 @@
 import QtQuick
+import QtMultimedia
 
 Item {
     id: mainMenu
@@ -6,6 +7,15 @@ Item {
     signal quitButtonClicked()
 
     // color: "#f6ebd5"
+    MediaPlayer {
+        id: backgroundMusic
+        source: "qrc:/assets/music.mp3"  // Cesta k souboru ve resources
+        autoPlay: true
+        loops: MediaPlayer.Infinite
+        audioOutput: AudioOutput {
+            volume: 0.1
+        }
+    }
 
     Text {
         text: "Copyright 2024-2025 © Created by Jaroslav Korčák, Daniel Němec & Miloslav Švábenský"

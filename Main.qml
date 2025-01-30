@@ -1,5 +1,6 @@
 import QtQuick
 
+
 Window {
     id: app
     width: 1280
@@ -10,6 +11,9 @@ Window {
     color: "#f6ebd5"
 
     visibility: Window.FullScreen
+
+    // Automatické přehrání hudby při spuštění aplikace
+
 
     function showGame() {
         fadingScene.perform(() => {

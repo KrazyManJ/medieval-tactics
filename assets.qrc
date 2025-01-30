@@ -7,5 +7,6 @@
         <file>assets/grass.png</file>
         <file>assets/icon.png</file>
         <file>assets/fonts/Macondo-Regular.ttf</file>
+        <file>assets/music.mp3</file>
     </qresource>
 </RCC>

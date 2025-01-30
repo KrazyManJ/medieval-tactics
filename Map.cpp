@@ -4,18 +4,18 @@
 
 Map::Map(){
     const std::string mapString =
-        "GGGGHHHHGSWWWWWSGGGGGGGGGG\n"
-        "GGGHHHHGGSWWWWWSSGGGGGGGGG\n"
-        "GGGHGGGGGSWWWWWWSGGGGGGGGG\n"
-        "GGGGGGGGGGSWWWWWSGGGGGGGGG\n"
-        "GGGGGGGGGGSWWWWWSGGGGGGGGG\n"
-        "GGGGGGGGGGGGGGGGGGGGGGGGGG\n"
-        "GGGGGGGGGGGGGGGGGGGGGGGGGG\n"
-        "GGGGGGGGGGGGSWWWSGGGGGGGGG\n"
-        "GGGGGGGGGGGGSWWWWSGGGGGGGG\n"
-        "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
-        "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
-        "GGGGGGGGGGGGSWWWWWSGGGGGGG\n"
+        "HHHGGGGGSWWWWWSGGGGGGGTTTT\n"
+        "HHHGGGGGSWWWWWSSGGGGGGGGTT\n"
+        "HHGGGGGGGGGGGGGGGGGHGGGGGT\n"
+        "HGGGGGGGGGGGGGGGGGGHGGGGGG\n"
+        "GGGGGGGGGGMWWWWWSGGGGGGGGG\n"
+        "GGGGGGGGGMMWWWWWSGGGGGGGGG\n"
+        "GGGGGGHGGGMMWWWWWSGGGGGGGH\n"
+        "GGGGGGHGGGGMMWWWWSGGGGGGHH\n"
+        "GGGGGGGGGGGGMWWWWSGGGGGGGG\n"
+        "TTTTGGGGGGGGGGGGGGGGGGGGGG\n"
+        "TTTTTGGGGGGGGGGGGGGGGGGGGH\n"
+        "TTTTTGGGGGGGSWWWWWSGGGGGHH\n"
         ;
 
     std::map<char, std::function<MapObject*()>> charMappings = {
@@ -24,6 +24,7 @@ Map::Map(){
         {'S',[](){ return new MapObject(false, GroundType::Sand); } },
         {'M',[](){ return new MapObject(false, GroundType::Mud); } },
         {'H',[](){ return new MapObject(true, GroundType::Hill); } },
+        {'T',[](){ return new MapObject(true, GroundType::Tree); } },
     };
 
     unsigned short row = 0, col = 0;
