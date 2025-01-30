@@ -67,9 +67,7 @@ void Game::useUnitAbilityOfCurrentPlayer(int row, int column) {
         throw std::logic_error("Cannot perform action with solid");
     if (!shop->isReady())
         throw std::logic_error("Cannot use unit in buying phase");
-    qDebug() << "performing";
     getPlayerOnTurn()->useSelectedUnit(row, column);
-    qDebug() << "marked turn";
     markTurn();
 }
 

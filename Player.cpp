@@ -65,7 +65,7 @@ Player::~Player() {
 }
 
 int Player::getNumberOfUnits() {
-    std::cout << units.size() << std::endl;
+    return units.size();
 }
 
 
