@@ -3,7 +3,7 @@
 #include "UnitFactory.h"
 #include "Player.h"
 
-class Shop {
+class Shop : public IQMLSerializable{
 private:
     bool m_isFirstPlayerReady;
     bool m_isSecondPlayerReady;
@@ -16,6 +16,7 @@ public:
     void markReady();
     bool isFirstPlayerReady();
     int getPlayerMoney();
+    QVariantMap serialize() override;
     ~Shop();
 };
 

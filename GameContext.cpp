@@ -90,6 +90,10 @@ Q_INVOKABLE QVariant GameContext::getMapObjectAt(int row, int column) {
     return Game::getInstance()->getMap()->getObjectAt(row,column)->serialize();
 }
 
+Q_INVOKABLE QVariant GameContext::getShopDetails() {
+    return Game::getInstance()->getShop()->serialize();
+}
+
 Q_INVOKABLE void GameContext::buyUnitForPlayer(int row, int column){
     Game::getInstance()->getShop()->buyUnitForCurrentPlayer(row,column);
 }
@@ -113,3 +117,5 @@ Q_INVOKABLE bool GameContext::isGameOver() {
 Q_INVOKABLE bool GameContext::canUseAbilityOnDest(int destRow, int destColumn) {
     return Game::getInstance()->getPlayerOnTurn()->getSelectedUnit()->canUseAbilityAt(destRow,destColumn);
 }
+
+

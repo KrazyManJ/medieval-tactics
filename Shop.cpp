@@ -56,3 +56,10 @@ void Shop::markReady() {
 bool Shop::isFirstPlayerReady() {
     return m_isFirstPlayerReady;
 }
+
+
+QVariantMap Shop::serialize() {
+    QVariantMap map;
+    map["unit"] = QString::fromUtf8(selectedBuyingUnit);
+    return map;
+}
