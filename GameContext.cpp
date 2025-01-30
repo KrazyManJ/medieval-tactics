@@ -23,7 +23,7 @@ Q_INVOKABLE QVariant GameContext::getUnitByPos(int row, int column) {
         std::vector<Unit*> units = player->getUnits();
         auto unitIt = std::find_if(units.begin(), units.end(), [row,column](Unit* unit){
             Position pos = unit->getPosition();
-            return pos.row == row && pos.column == column && unit->getHp() > 0;
+            return pos.row == row && pos.column == column && !unit->isDead();
         });
         if (unitIt == units.end()) continue;
 

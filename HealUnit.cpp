@@ -31,6 +31,6 @@ bool HealUnit::abilityAppliable(int row, int col) {
     return std::any_of(
         yourUnits.begin(),
         yourUnits.end(),
-        [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col; }
+        [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col && !u->isDead(); }
     );
 }

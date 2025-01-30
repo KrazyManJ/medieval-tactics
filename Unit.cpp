@@ -101,3 +101,7 @@ void Unit::useAbility(int row, int col) {
         throw std::logic_error("Cannot use ability outside of a range");
     ability(row,col);
 }
+
+bool Unit::isDead() {
+    return getHp() <= 0;
+}

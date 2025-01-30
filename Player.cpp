@@ -21,7 +21,7 @@ std::vector<Unit*> Player::getUnits() const {
 void Player::selectUnit(int row, int column) {
     auto unitIt = std::find_if(units.begin(), units.end(), [row,column](Unit* unit){
         Position pos = unit->getPosition();
-        return pos.row == row && pos.column == column;
+        return pos.row == row && pos.column == column && !unit->isDead();
     });
     if (unitIt == units.end())
         throw std::out_of_range("Index out of range");

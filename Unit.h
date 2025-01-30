@@ -44,7 +44,7 @@ public:
     QVariantMap serialize() override;
     Position getPosition();
     int getWalkingRange();
-
+    bool isDead();
 };
 
 
