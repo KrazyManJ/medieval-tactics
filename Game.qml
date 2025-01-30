@@ -164,7 +164,7 @@ Item {
         id: moneyDisplay
         function updateMoney() {
             const money = gameContext.getPlayerMoney();
-            moneyDisplay.text = money;
+            moneyDisplay.text = "Money: " + money;
         }
 
         text: "Money: " + gameContext.getPlayerMoney()
