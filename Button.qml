@@ -19,7 +19,6 @@ Rectangle{
         font.bold: true
         font.pixelSize: button.fontSize
         anchors.centerIn: parent
-        font.family: "Inknut Antiqua"
     }
 
     states: [

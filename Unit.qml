@@ -20,7 +20,7 @@ Rectangle {
     Rectangle {
         visible: false
         border {
-            color: black
+            color: "black"
             width: 2
         }
 

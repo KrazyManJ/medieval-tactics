@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon(":/assets/menu-background.png"));
 
-    // qint32 fontId = QFontDatabase::addApplicationFont(":/assets/fonts/Macondo-Regular.ttf");
-    // QStringList fontList = QFontDatabase::applicationFontFamilies(fontId);
+    qint32 fontId = QFontDatabase::addApplicationFont(":/assets/fonts/Macondo-Regular.ttf");
+    QStringList fontList = QFontDatabase::applicationFontFamilies(fontId);
 
-    // QString family = fontList.first();
-    // QGuiApplication::setFont(QFont(family));
+    QString family = fontList.first();
+    QGuiApplication::setFont(QFont(family));
 
     engine.loadFromModule("medieval-tactics", "Main");
     return app.exec();
