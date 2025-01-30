@@ -13,7 +13,7 @@ float AttackUnit::getAttackPower()
     return m_power;
 }
 
-void AttackUnit::useAbility(int row, int column)
+void AttackUnit::ability(int row, int column)
 {
     auto* game = Game::getInstance();
     auto* enemyPlayer = game->getOponentPlayerOfPlayerOnTurn();
@@ -25,4 +25,13 @@ void AttackUnit::useAbility(int row, int column)
             break;
         }
     };
+}
+
+bool AttackUnit::abilityAppliable(int row, int col) {
+    std::vector<Unit*> enemyUnits = Game::getInstance()->getOponentPlayerOfPlayerOnTurn()->getUnits();
+    return std::any_of(
+        enemyUnits.begin(),
+        enemyUnits.end(),
+        [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col; }
+        );
 }

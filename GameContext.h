@@ -45,6 +45,8 @@ public:
     Q_INVOKABLE int getPlayerMoney();
 
     Q_INVOKABLE bool isGameOver();
+
+    Q_INVOKABLE bool canUseAbilityOnDest(int destRow, int destColumn);
 signals:
 };
 

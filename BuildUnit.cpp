@@ -13,12 +13,14 @@ float BuildUnit::getBuildPower()
     return m_power;
 }
 
-void BuildUnit::useAbility(int row, int column)
+void BuildUnit::ability(int row, int column)
 {
-    auto* game = Game::getInstance();
-    auto* map = game->getMap();
-    auto* mapObject = map->getObjectAt(row, column);
-    mapObject->setIsSolid(true);
+    auto* mapObject = Game::getInstance()->getMap()->getObjectAt(row,column);
     mapObject->setType(GroundType::Tree);
+    mapObject->setIsSolid(true);
+}
 
+bool BuildUnit::abilityAppliable(int row, int col) {
+    auto* mapObject = Game::getInstance()->getMap()->getObjectAt(row,col);
+    return !mapObject->isSolid();
 }

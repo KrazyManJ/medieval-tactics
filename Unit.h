@@ -3,7 +3,6 @@
 #include <Position.h>
 #include <GroundType.h>
 #include "vector"
-#include "iostream"
 #include "IQMLSerializable.h"
 
 
@@ -27,6 +26,10 @@ public:
          int abilityRange, int cost,
          std::vector<GroundType> enterableGroundType, Position positon,
          float power, std::string name, std::string description);
+
+    virtual void ability(int row, int col) = 0;
+    virtual bool abilityAppliable(int row, int col) = 0;
+
     float getHp();
     void setHp(float hp);
     int getDefense();
@@ -35,9 +38,9 @@ public:
     std::string getDescription();
     void move(int row, int column);
     bool isInWalkingRange(int row, int column);
-    bool isInAbilityRange(int row, int column);
+    bool canUseAbilityAt(int row, int column);
     std::vector<GroundType> getEnterableGroundType();
-    virtual void useAbility(int row, int column)= 0;
+    void useAbility(int row, int column);
     QVariantMap serialize() override;
     Position getPosition();
     int getWalkingRange();

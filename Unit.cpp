@@ -49,14 +49,11 @@ bool Unit::isInWalkingRange(int row, int column)
     return feedback;
 }
 
-bool Unit::isInAbilityRange(int row, int column)
+bool Unit::canUseAbilityAt(int row, int column)
 {
-    bool feedback = false;
-    if(abs(row - m_position.row) <= m_abilityRange and
-        abs(column - m_position.column) <= m_abilityRange){
-        feedback = true;
-    }
-    return feedback;
+    return (abs(row - m_position.row) <= m_abilityRange &&
+            abs(column - m_position.column) <= m_abilityRange)
+        && abilityAppliable(row,column);
 }
 
 std::vector<GroundType> Unit::getEnterableGroundType()
@@ -97,4 +94,10 @@ int Unit::getWalkingRange()
 
 int Unit::getCost() {
     return m_cost;
+}
+
+void Unit::useAbility(int row, int col) {
+    if (!canUseAbilityAt(row,col))
+        throw std::logic_error("Cannot use ability outside of a range");
+    ability(row,col);
 }

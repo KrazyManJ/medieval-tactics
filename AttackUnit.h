@@ -11,7 +11,9 @@ public:
               const std::vector<GroundType>& enterableGroundType, const Position& position,
               float buildPower, const std::string& name, const std::string& description);
     float getAttackPower();
-    void useAbility(int row, int column) override;
+
+    void ability(int row, int column) override;
+    bool abilityAppliable(int row, int col) override;
 };
 
 #endif // ATTACKUNIT_H

@@ -109,3 +109,7 @@ Q_INVOKABLE void GameContext::useUnitOfCurrentPlayer(int destRow, int destColumn
 Q_INVOKABLE bool GameContext::isGameOver() {
     return Game::getInstance()->isGameOver();
 }
+
+Q_INVOKABLE bool GameContext::canUseAbilityOnDest(int destRow, int destColumn) {
+    return Game::getInstance()->getPlayerOnTurn()->getSelectedUnit()->canUseAbilityAt(destRow,destColumn);
+}

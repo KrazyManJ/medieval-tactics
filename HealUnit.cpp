@@ -12,18 +12,25 @@ float HealUnit::getHealPower()
     return m_power;
 }
 
-void HealUnit::useAbility(int row, int column)
+void HealUnit::ability(int row, int column)
 {
     auto* game = Game::getInstance();
     auto* Player = game->getPlayerOnTurn();
     std::vector<Unit*> yourUnits = Player->getUnits();
 
     for(Unit* yourUnit : yourUnits){
-
         if(yourUnit->getPosition().row == row
             and yourUnit->getPosition().column == column){
             yourUnit->setHp(yourUnit->getHp()+getHealPower());
         };
-
     };
+}
+
+bool HealUnit::abilityAppliable(int row, int col) {
+    std::vector<Unit*> yourUnits = Game::getInstance()->getPlayerOnTurn()->getUnits();
+    return std::any_of(
+        yourUnits.begin(),
+        yourUnits.end(),
+        [row,col](Unit* u){ return u->getPosition().row == row && u->getPosition().column == col; }
+    );
 }
