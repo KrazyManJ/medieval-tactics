@@ -94,23 +94,13 @@ int Game::getRemainingRoundTurns() {
 
 bool Game::isGameOver() {
     if (!shop->isReady()) return false;
-    // for (Unit* unit : getFirstPlayer()->getUnits()) {
-    //     qDebug() << getFirstPlayer() -> getColor() << unit->getName() << unit->getHp();
-    // }
-    // for (Unit* unit : getSecondPlayer()->getUnits()) {
-    //     qDebug() << getSecondPlayer() -> getColor() << unit->getName() << unit->getHp();
-    // }
-    // return false;
-
     for (Player* player : {getFirstPlayer(),getSecondPlayer()}) {
         std::vector<Unit*> units = player->getUnits();
-        qDebug() << player->getColor();
         if (
             std::all_of(
                 units.begin(),
                 units.end(),
                 [player](Unit* u){
-                    qDebug() << player->getColor() << u->getName() << u->getHp();
                     return u->getHp() <= 0;
                 }
             )

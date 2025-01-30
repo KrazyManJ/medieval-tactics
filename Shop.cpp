@@ -15,7 +15,6 @@ void Shop::buyUnitForCurrentPlayer(int row, int column) {
             int cash = player->getMoney() - unit->getCost();
             player->setMoney(cash);
             player->addUnit(unit);
-            std::cout << "Player 1 cash: " << player->getMoney() << std::endl;
         }
     } else {
         Player* player = game->getSecondPlayer();
@@ -23,7 +22,6 @@ void Shop::buyUnitForCurrentPlayer(int row, int column) {
             int cash = player->getMoney() - unit->getCost();
             player->setMoney(cash);
             player->addUnit(unit);
-            std::cout << "Player 2 cash: " << player->getMoney() << std::endl;
         }
     }
 }
