@@ -8,5 +8,7 @@
         <file>assets/icon.png</file>
         <file>assets/fonts/Macondo-Regular.ttf</file>
         <file>assets/music.mp3</file>
+        <file>assets/hill.png</file>
+        <file>assets/mud.png</file>
     </qresource>
 </RCC>
