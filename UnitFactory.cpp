@@ -13,7 +13,7 @@ QVariant UnitFactory::serialize(){
 }
 
 std::map<std::string,std::function<Unit*(int,int)>> UnitFactory::unitCreationMap = {
-    {"Warrior",[](int r, int c){ return new AttackUnit(100,10,2,3,100,{GroundType::Grass},{r,c},500,"Warrior","A brave knight."); }},
+    {"Druid",[](int r, int c){ return new BuildUnit(90, 7, 3, 3, 500, {GroundType::Grass},{r,c}, 10, "Druid", "A weird fella."); }},
     {"Priest",[](int r, int c){ return new HealUnit(80, 5, 2, 6, 200,{GroundType::Grass},{r,c}, 10, "Priest", "A brave priest."); }},
-    {"Druid",[](int r, int c){ return new BuildUnit(90, 7, 3, 3, 500, {GroundType::Grass},{r,c}, 10, "Druid", "A weird fella."); }}
+    {"Warrior",[](int r, int c){ return new AttackUnit(100,10,2,3,100,{GroundType::Grass},{r,c},500,"Warrior","A brave knight."); }},
 };

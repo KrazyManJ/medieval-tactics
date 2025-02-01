@@ -47,6 +47,11 @@ Item {
         width: 140
         height: 40
         onClicked: game.quitButtonClicked()
+        anchors {
+            left: parent.left
+            top: parent.top
+            margins: 2
+        }
     }
 
     Text {

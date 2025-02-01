@@ -2,7 +2,7 @@ import QtQuick
 
 Rectangle {
     id: unitControls
-    color: "#AAA"
+    color: "#decba4"
     height: 150
     focus: true
 

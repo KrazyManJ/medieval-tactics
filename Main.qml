@@ -64,8 +64,10 @@ Window {
         anchors.fill: parent
 
         onMenuButtonClicked: {
-            gameOver.visible = false;
-            menu.visible = true;
+            fadingScene.perform(() => {
+                gameOver.visible = false;
+                menu.visible = true;
+            })
         }
     }
 

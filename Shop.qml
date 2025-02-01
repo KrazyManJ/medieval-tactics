@@ -3,7 +3,7 @@ import QtQuick.Controls as QC
 
 Rectangle {
     id: shop
-    color: "#AAA"
+    color: "#decba4"
     width: 400
     height: 200
     signal buyingUnitSelected()
@@ -30,7 +30,7 @@ Rectangle {
 
         Repeater {
 
-            model: gameContext.getShopDetails().availableUnits
+            model: gameContext.getShopDetails().availableUnits.sort((a,b) => a.cost - b.cost)
 
             Column {
                 property string unitName: modelData.name
@@ -80,6 +80,7 @@ Rectangle {
                 gameContext.playerReady()
                 shop.readyButtonClicked()
             }
+            anchors.verticalCenter: parent.verticalCenter
         }
     }
 }
